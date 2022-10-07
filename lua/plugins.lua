@@ -48,47 +48,6 @@ function M.setup()
 			end,
 		}
 
-		--[[
-		use {
-		"sainnhe/everforest",
-		config = function()
-		vim.cmd "colorscheme everforest"
-		end,
-		}
-
-		use {
-		"catppuccin/nvim",
-		as = "catppuccin",
-		config = function()
-		vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
-		require("catppuccin").setup()
-		vim.api.nvim_command "colorscheme catppuccin"
-		end
-		}
-
-		use {
-		"sainnhe/edge",
-		config = function()
-		vim.cmd "colorscheme edge"
-		end,
-		}
-
-		use {
-		"sainnhe/sonokai",
-		config = function()
-		vim.cmd "colorscheme sonokai"
-		end,
-		}
-		--]]
-
-		-- Startup screen
-		use {
-			"goolord/alpha-nvim",
-			config = function()
-				require("config.alpha").setup()
-			end,
-		}
-
 		-- Git
 		use {
 			"TimUntersberger/neogit",
@@ -129,6 +88,20 @@ function M.setup()
 			requires = { 'kyazdani42/nvim-web-devicons', opt = true },
 			config = function()
 				require("config.lualine").setup()
+			end,
+		}
+
+		-- Surrounding ysw)
+		use 'tpope/vim-surround'
+
+		-- Commenting gcc/gc
+		use 'tpope/vim-commentary'
+
+		-- Nerdtree navigation
+		use {
+			'preservim/nerdtree',
+			config = function()
+				require("config.nerdtree").setup()
 			end,
 		}
 
