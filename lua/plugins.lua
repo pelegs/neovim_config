@@ -105,6 +105,16 @@ function M.setup()
 			end,
 		}
 
+		-- Sniprun?
+		use {
+			"michaelb/sniprun",
+			run = "bash install.sh",
+			config = function()
+				require("config.sniprun").setup()
+			end,
+		}
+
+		-- BOOTSTRAP
 		if packer_bootstrap then
 			print "Restart Neovim required after installation!"
 			require("packer").sync()
