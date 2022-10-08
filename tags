@@ -9,6 +9,7 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20220828.0/
+Configuration comments for the future:	README.md	/^## Configuration comments for the future:$/;"	s
 config	lua/plugins.lua	/^			config = function()$/;"	f
 error_msg	plugin/packer_compiled.lua	/^local no_errors, error_msg = pcall(function()$/;"	f
 footer	lua/config/alpha.lua	/^  local function footer()$/;"	f
@@ -21,6 +22,7 @@ save_profiles	plugin/packer_compiled.lua	/^local function save_profiles(threshol
 setup	lua/config/alpha.lua	/^function M.setup()$/;"	f	unknown:M
 setup	lua/config/indentblankline.lua	/^function M.setup()$/;"	f	unknown:M
 setup	lua/config/lualine.lua	/^function M.setup()$/;"	f	unknown:M
+setup	lua/config/markdown_preview.lua	/^function M.setup()$/;"	f	unknown:M
 setup	lua/config/marks.lua	/^function M.setup()$/;"	f	unknown:M
 setup	lua/config/neogit.lua	/^function M.setup()$/;"	f	unknown:M
 setup	lua/config/nerdtree.lua	/^function M.setup()$/;"	f	unknown:M

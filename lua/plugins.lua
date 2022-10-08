@@ -107,7 +107,7 @@ function M.setup()
 
 		-- Sniprun
 		use {
-			"michaelb/sniprun",
+			'michaelb/sniprun',
 			run = "bash install.sh",
 			config = function()
 				require("config.sniprun").setup()
@@ -127,6 +127,11 @@ function M.setup()
 
 		-- Gutentags
 		use 'ludovicchabant/vim-gutentags'
+
+		-- Markdown preview
+		use {
+			'iamcco/markdown-preview.nvim',
+		}
 
 		-- BOOTSTRAP
 		if packer_bootstrap then
