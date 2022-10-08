@@ -9,19 +9,42 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20220828.0/
+Avoiding deprication warning	README.md	/^#### Avoiding deprication warning$/;"	t	subsection:Configuration comments for the future:""LSP
 Configuration comments for the future:	README.md	/^## Configuration comments for the future:$/;"	s
+LSP	README.md	/^### LSP$/;"	S	section:Configuration comments for the future:
+["<S-Tab>"]	lua/config/cmp.lua	/^      ["<S-Tab>"] = cmp.mapping(function(fallback)$/;"	f
+["<Tab>"]	lua/config/cmp.lua	/^      ["<Tab>"] = cmp.mapping(function(fallback)$/;"	f
+c	lua/config/cmp.lua	/^        c = function(fallback)$/;"	f
 config	lua/plugins.lua	/^			config = function()$/;"	f
+dump	lua/utils/init.lua	/^_G.dump = function(...)$/;"	f	unknown:_G
+error	lua/utils/init.lua	/^function M.error(msg, name)$/;"	f	unknown:M
 error_msg	plugin/packer_compiled.lua	/^local no_errors, error_msg = pcall(function()$/;"	f
+expand	lua/config/cmp.lua	/^      expand = function(args)$/;"	f
+find_buffers	lua/utils/finder.lua	/^function M.find_buffers()$/;"	f	unknown:M
+find_files	lua/utils/finder.lua	/^function M.find_files()$/;"	f	unknown:M
 footer	lua/config/alpha.lua	/^  local function footer()$/;"	f
+format	lua/config/cmp.lua	/^      format = function(entry, vim_item)$/;"	f
+has_words_before	lua/config/cmp.lua	/^  local has_words_before = function()$/;"	f
 header	lua/config/alpha.lua	/^  local function header()$/;"	f
+info	lua/utils/init.lua	/^function M.info(msg, name)$/;"	f	unknown:M
+keymappings	lua/config/lsp/keymaps.lua	/^local function keymappings(client, bufnr)$/;"	f
+log	lua/utils/init.lua	/^function M.log(msg, hl, name)$/;"	f	unknown:M
 map	lua/config/nerdtree.lua	/^local function map(mode, lhs, rhs, opts)$/;"	f
+on_attach	lua/config/lsp/init.lua	/^local function on_attach(client, bufnr)$/;"	f
 open_fn	lua/plugins.lua	/^			open_fn = function()$/;"	f
 packer_init	lua/plugins.lua	/^	local function packer_init()$/;"	f
 plugins	lua/plugins.lua	/^	local function plugins(use)$/;"	f
+prequire	lua/utils/init.lua	/^_G.prequire = function(...)$/;"	f	unknown:_G
+prompt	lua/utils/finder.lua	/^  vim.ui.select(results, { prompt = "Find buffer:" }, function(selected)$/;"	f
 save_profiles	plugin/packer_compiled.lua	/^local function save_profiles(threshold)$/;"	f
 setup	lua/config/alpha.lua	/^function M.setup()$/;"	f	unknown:M
+setup	lua/config/cmp.lua	/^function M.setup()$/;"	f	unknown:M
 setup	lua/config/indentblankline.lua	/^function M.setup()$/;"	f	unknown:M
+setup	lua/config/lsp/init.lua	/^function M.setup()$/;"	f	unknown:M
+setup	lua/config/lsp/installer.lua	/^function M.setup(servers, options)$/;"	f	unknown:M
+setup	lua/config/lsp/keymaps.lua	/^function M.setup(client, bufnr)$/;"	f	unknown:M
 setup	lua/config/lualine.lua	/^function M.setup()$/;"	f	unknown:M
+setup	lua/config/luasnip.lua	/^function M.setup()$/;"	f	unknown:M
 setup	lua/config/markdown_preview.lua	/^function M.setup()$/;"	f	unknown:M
 setup	lua/config/marks.lua	/^function M.setup()$/;"	f	unknown:M
 setup	lua/config/neogit.lua	/^function M.setup()$/;"	f	unknown:M
@@ -30,6 +53,10 @@ setup	lua/config/sniprun.lua	/^function M.setup()$/;"	f	unknown:M
 setup	lua/config/treesitter.lua	/^function M.setup()$/;"	f	unknown:M
 setup	lua/config/whichkey.lua	/^function M.setup()$/;"	f	unknown:M
 setup	lua/plugins.lua	/^function M.setup()$/;"	f	unknown:M
+sniprun	README.md	/^### sniprun$/;"	S	section:Configuration comments for the future:
+t	lua/utils/init.lua	/^function M.t(str)$/;"	f	unknown:M
 time	plugin/packer_compiled.lua	/^  time = function(chunk, start) end$/;"	f
 time	plugin/packer_compiled.lua	/^  time = function(chunk, start)$/;"	f
+tree-sitter	README.md	/^### tree-sitter$/;"	S	section:Configuration comments for the future:
 try_loadstring	plugin/packer_compiled.lua	/^local function try_loadstring(s, component, name)$/;"	f
+warn	lua/utils/init.lua	/^function M.warn(msg, name)$/;"	f	unknown:M

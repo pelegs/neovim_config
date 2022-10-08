@@ -10,3 +10,14 @@ manually in the main plugin folder. This will generate the binary file in the co
 
 ### tree-sitter
 Install the packages `gxx_linux-64` and `gcc_linux-64` in your conda environment.
+
+### LSP
+#### Avoiding deprication warning
+After configuring according to neovim for begginners blog (https://alpha2phi.medium.com/neovim-for-beginners-lsp-part-1-b3a17ddbe611), in file `lua/config/lsp/keymaps.lua` replace line 28 from
+```lua
+if client.resolved_capabilities.document_formatting then
+```
+to
+```lua
+if client.supports_method "textDocument/formatting" then
+```
