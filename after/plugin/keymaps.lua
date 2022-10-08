@@ -39,3 +39,12 @@ keymap("n", "<Right>", ":vertical resize -1<CR>", default_opts)
 keymap("n", "<Up>", ":resize -1<CR>", default_opts)
 keymap("n", "<Down>", ":resize +1<CR>", default_opts)
 --]]
+
+-- Navigation
+keymap("n", "<C-Left>", "<C-\\><C-n><C-w><Left>", default_opts)
+keymap("n", "<C-Right>", "<C-\\><C-n><C-w><Right>", default_opts)
+keymap("n", "<C-Up>", "<C-\\><C-n><C-w><Up>", default_opts)
+keymap("n", "<C-Down>", "<C-\\><C-n><C-w><Down>", default_opts)
+
+-- Tags bar
+keymap('n', '<F8>', '<cmd>TagbarToggle<CR>', default_opts)

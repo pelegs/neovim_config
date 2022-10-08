@@ -114,12 +114,19 @@ function M.setup()
 			end,
 		}
 
+		-- Visible marks
 		use {
 			'chentoast/marks.nvim',
 			config = function()
 				require("config.marks").setup()
 			end,
 		}
+
+		-- Tagsbar
+		use 'preservim/tagbar'
+
+		-- Gutentags
+		use 'ludovicchabant/vim-gutentags'
 
 		-- BOOTSTRAP
 		if packer_bootstrap then
