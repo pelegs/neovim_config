@@ -105,12 +105,19 @@ function M.setup()
 			end,
 		}
 
-		-- Sniprun?
+		-- Sniprun
 		use {
 			"michaelb/sniprun",
 			run = "bash install.sh",
 			config = function()
 				require("config.sniprun").setup()
+			end,
+		}
+
+		use {
+			'chentoast/marks.nvim',
+			config = function()
+				require("config.marks").setup()
 			end,
 		}
 
