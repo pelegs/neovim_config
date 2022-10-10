@@ -104,6 +104,7 @@ function M.setup()
 		-- Luasnip?
 		use 'L3MON4D3/LuaSnip'
 		use 'mendes-davi/coq_luasnip'
+		use 'rafamadriz/friendly-snippets'
 
 		-- WhichKey
 		use {

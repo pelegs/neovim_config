@@ -9,29 +9,135 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20220828.0/
+0	snippets/lua.json	/^            "${1:className} = {}\\n",$/;"	s	array:class.body
+0	snippets/lua.json	/^            "elseif ${1:true} then",$/;"	s	array:elseif.body
+0	snippets/lua.json	/^            "f = io.open(${1:\\"${2:filename}\\"}, \\"${3:r}\\")\\n",$/;"	s	array:forline.body
+0	snippets/lua.json	/^            "for ${1:i}=${2:1},${3:10} do",$/;"	s	array:for.body
+0	snippets/lua.json	/^            "for i, ${1:x} in pairs(${2:table}) do",$/;"	s	array:foreach.body
+0	snippets/lua.json	/^            "function ${1:name}($2)",$/;"	s	array:function.body
+0	snippets/lua.json	/^            "function self:${1:methodName}($2)",$/;"	s	array:self.body
+0	snippets/lua.json	/^            "if ${1:true} then",$/;"	s	array:if.body
+0	snippets/lua.json	/^            "local ${0}"$/;"	s	array:local.body
+0	snippets/lua.json	/^            "local ${1:name} = function($2)",$/;"	s	array:inline-function.body
+0	snippets/lua.json	/^            "local ${1:status}, ${2:err_or_value} = pcall(${3:function})"$/;"	s	array:locpcall.body
+0	snippets/lua.json	/^            "local ${1:varName} = ${0:value}"$/;"	s	array:assigment.body
+0	snippets/lua.json	/^            "local ${1:var} = require(\\"${2:module}\\")"$/;"	s	array:locreq.body
+0	snippets/lua.json	/^            "pcall(${1:function})"$/;"	s	array:pcall.body
+0	snippets/lua.json	/^            "print(${0})"$/;"	s	array:print.body
+0	snippets/lua.json	/^            "require(\\"${1:module}\\")"$/;"	s	array:require.body
+0	snippets/lua.json	/^            "return $0"$/;"	s	array:return.body
+0	snippets/lua.json	/^            "while ${1:true} do",$/;"	s	array:while.body
+1	snippets/lua.json	/^            "$1.${2:new} = function($3)",$/;"	s	array:class.body
+1	snippets/lua.json	/^            "\\t$0"$/;"	s	array:elseif.body
+1	snippets/lua.json	/^            "\\t$0",$/;"	s	array:for.body
+1	snippets/lua.json	/^            "\\t$0",$/;"	s	array:foreach.body
+1	snippets/lua.json	/^            "\\t$0",$/;"	s	array:if.body
+1	snippets/lua.json	/^            "\\t$0",$/;"	s	array:self.body
+1	snippets/lua.json	/^            "\\t$0",$/;"	s	array:while.body
+1	snippets/lua.json	/^            "\\t${0:-- code}",$/;"	s	array:function.body
+1	snippets/lua.json	/^            "\\t${0:-- code}",$/;"	s	array:inline-function.body
+1	snippets/lua.json	/^            "while true do",$/;"	s	array:forline.body
+2	snippets/lua.json	/^            "\\tline = f:read()",$/;"	s	array:forline.body
+2	snippets/lua.json	/^            "\\tlocal ${4:varName} = ${5:{}}\\n",$/;"	s	array:class.body
+2	snippets/lua.json	/^            "end"$/;"	s	array:for.body
+2	snippets/lua.json	/^            "end"$/;"	s	array:foreach.body
+2	snippets/lua.json	/^            "end"$/;"	s	array:function.body
+2	snippets/lua.json	/^            "end"$/;"	s	array:if.body
+2	snippets/lua.json	/^            "end"$/;"	s	array:inline-function.body
+2	snippets/lua.json	/^            "end"$/;"	s	array:self.body
+2	snippets/lua.json	/^            "end"$/;"	s	array:while.body
+3	snippets/lua.json	/^            "\\t${6: --code}\\n",$/;"	s	array:class.body
+3	snippets/lua.json	/^            "\\tif line == nil then break end\\n",$/;"	s	array:forline.body
+4	snippets/lua.json	/^            "\\t${0:-- code}",$/;"	s	array:forline.body
+4	snippets/lua.json	/^            "\\treturn $4",$/;"	s	array:class.body
+5	snippets/lua.json	/^            "end"$/;"	s	array:class.body
+5	snippets/lua.json	/^            "end"$/;"	s	array:forline.body
 Avoiding deprication warning	README.md	/^#### Avoiding deprication warning$/;"	t	subsection:Configuration comments for the future:""LSP
 Configuration comments for the future:	README.md	/^## Configuration comments for the future:$/;"	s
 LSP	README.md	/^### LSP$/;"	S	section:Configuration comments for the future:
+assigment	snippets/lua.json	/^    "assigment": {$/;"	o
+body	snippets/lua.json	/^        "body": [$/;"	a	object:assigment
+body	snippets/lua.json	/^        "body": [$/;"	a	object:class
+body	snippets/lua.json	/^        "body": [$/;"	a	object:elseif
+body	snippets/lua.json	/^        "body": [$/;"	a	object:for
+body	snippets/lua.json	/^        "body": [$/;"	a	object:foreach
+body	snippets/lua.json	/^        "body": [$/;"	a	object:forline
+body	snippets/lua.json	/^        "body": [$/;"	a	object:function
+body	snippets/lua.json	/^        "body": [$/;"	a	object:if
+body	snippets/lua.json	/^        "body": [$/;"	a	object:inline-function
+body	snippets/lua.json	/^        "body": [$/;"	a	object:local
+body	snippets/lua.json	/^        "body": [$/;"	a	object:locpcall
+body	snippets/lua.json	/^        "body": [$/;"	a	object:locreq
+body	snippets/lua.json	/^        "body": [$/;"	a	object:pcall
+body	snippets/lua.json	/^        "body": [$/;"	a	object:print
+body	snippets/lua.json	/^        "body": [$/;"	a	object:require
+body	snippets/lua.json	/^        "body": [$/;"	a	object:return
+body	snippets/lua.json	/^        "body": [$/;"	a	object:self
+body	snippets/lua.json	/^        "body": [$/;"	a	object:while
+class	snippets/lua.json	/^    "class": {$/;"	o
 config	lua/plugins.lua	/^			config = function()$/;"	f
+description	snippets/lua.json	/^        "description": "Create a class"$/;"	s	object:class
+description	snippets/lua.json	/^        "description": "Protect call a function as a variable"$/;"	s	object:locpcall
+description	snippets/lua.json	/^        "description": "Protect call a function"$/;"	s	object:pcall
+description	snippets/lua.json	/^        "description": "Require module as a variable"$/;"	s	object:locreq
+description	snippets/lua.json	/^        "description": "Require module"$/;"	s	object:require
+description	snippets/lua.json	/^        "description": "create a variable"$/;"	s	object:assigment
+description	snippets/lua.json	/^        "description": "create a variable"$/;"	s	object:local
+description	snippets/lua.json	/^        "description": "for loop range"$/;"	s	object:for
+description	snippets/lua.json	/^        "description": "read file line by line"$/;"	s	object:forline
+description	snippets/lua.json	/^        "description": "return value"$/;"	s	object:return
 dump	lua/utils/init.lua	/^_G.dump = function(...)$/;"	f	unknown:_G
+elseif	snippets/lua.json	/^    "elseif": {$/;"	o
 error	lua/utils/init.lua	/^function M.error(msg, name)$/;"	f	unknown:M
 error_msg	plugin/packer_compiled.lua	/^local no_errors, error_msg = pcall(function()$/;"	f
 find_buffers	lua/utils/finder.lua	/^function M.find_buffers()$/;"	f	unknown:M
 find_files	lua/utils/finder.lua	/^function M.find_files()$/;"	f	unknown:M
 footer	lua/config/alpha.lua	/^  local function footer()$/;"	f
+for	snippets/lua.json	/^    "for": {$/;"	o
+foreach	snippets/lua.json	/^    "foreach": {$/;"	o
+forline	snippets/lua.json	/^    "forline": {$/;"	o
+function	snippets/lua.json	/^    "function": {$/;"	o
 header	lua/config/alpha.lua	/^  local function header()$/;"	f
+if	snippets/lua.json	/^    "if": {$/;"	o
 info	lua/utils/init.lua	/^function M.info(msg, name)$/;"	f	unknown:M
+inline-function	snippets/lua.json	/^    "inline-function": {$/;"	o
 keymappings	lua/config/lsp/keymaps.lua	/^local function keymappings(client, bufnr)$/;"	f
 lazy_load_module	plugin/packer_compiled.lua	/^local function lazy_load_module(module_name)$/;"	f
+local	snippets/lua.json	/^    "local": {$/;"	o
+locpcall	snippets/lua.json	/^    "locpcall": {$/;"	o
+locreq	snippets/lua.json	/^    "locreq": {$/;"	o
 log	lua/utils/init.lua	/^function M.log(msg, hl, name)$/;"	f	unknown:M
 map	lua/config/nerdtree.lua	/^local function map(mode, lhs, rhs, opts)$/;"	f
 on_attach	lua/config/lsp/init.lua	/^local function on_attach(client, bufnr)$/;"	f
 open_fn	lua/plugins.lua	/^			open_fn = function()$/;"	f
 packer_init	lua/plugins.lua	/^	local function packer_init()$/;"	f
+pcall	snippets/lua.json	/^    "pcall": {$/;"	o
 plugins	lua/plugins.lua	/^	local function plugins(use)$/;"	f
+prefix	snippets/lua.json	/^        "prefix": "cl",$/;"	s	object:class
+prefix	snippets/lua.json	/^        "prefix": "elseif",$/;"	s	object:elseif
+prefix	snippets/lua.json	/^        "prefix": "f=",$/;"	s	object:inline-function
+prefix	snippets/lua.json	/^        "prefix": "for",$/;"	s	object:for
+prefix	snippets/lua.json	/^        "prefix": "foreach",$/;"	s	object:foreach
+prefix	snippets/lua.json	/^        "prefix": "forline",$/;"	s	object:forline
+prefix	snippets/lua.json	/^        "prefix": "fu",$/;"	s	object:function
+prefix	snippets/lua.json	/^        "prefix": "if",$/;"	s	object:if
+prefix	snippets/lua.json	/^        "prefix": "l",$/;"	s	object:local
+prefix	snippets/lua.json	/^        "prefix": "ll",$/;"	s	object:assigment
+prefix	snippets/lua.json	/^        "prefix": "lpca",$/;"	s	object:locpcall
+prefix	snippets/lua.json	/^        "prefix": "lreq",$/;"	s	object:locreq
+prefix	snippets/lua.json	/^        "prefix": "p",$/;"	s	object:print
+prefix	snippets/lua.json	/^        "prefix": "pca",$/;"	s	object:pcall
+prefix	snippets/lua.json	/^        "prefix": "req",$/;"	s	object:require
+prefix	snippets/lua.json	/^        "prefix": "rt",$/;"	s	object:return
+prefix	snippets/lua.json	/^        "prefix": "self:",$/;"	s	object:self
+prefix	snippets/lua.json	/^        "prefix": "while",$/;"	s	object:while
 prequire	lua/utils/init.lua	/^_G.prequire = function(...)$/;"	f	unknown:_G
+print	snippets/lua.json	/^    "print": {$/;"	o
 prompt	lua/utils/finder.lua	/^  vim.ui.select(results, { prompt = "Find buffer:" }, function(selected)$/;"	f
+require	snippets/lua.json	/^    "require": {$/;"	o
+return	snippets/lua.json	/^    "return": {$/;"	o
 save_profiles	plugin/packer_compiled.lua	/^local function save_profiles(threshold)$/;"	f
+self	snippets/lua.json	/^    "self": {$/;"	o
 setup	lua/config/alpha.lua	/^function M.setup()$/;"	f	unknown:M
 setup	lua/config/coq.lua	/^function M.setup()$/;"	f	unknown:M
 setup	lua/config/indentblankline.lua	/^function M.setup()$/;"	f	unknown:M
@@ -55,3 +161,4 @@ time	plugin/packer_compiled.lua	/^  time = function(chunk, start)$/;"	f
 tree-sitter	README.md	/^### tree-sitter$/;"	S	section:Configuration comments for the future:
 try_loadstring	plugin/packer_compiled.lua	/^local function try_loadstring(s, component, name)$/;"	f
 warn	lua/utils/init.lua	/^function M.warn(msg, name)$/;"	f	unknown:M
+while	snippets/lua.json	/^    "while": {$/;"	o
