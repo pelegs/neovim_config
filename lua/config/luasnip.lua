@@ -7,7 +7,9 @@ function M.setup()
     updateevents = "TextChanged,TextChangedI",
   }
 
-  require("luasnip/loaders/from_vscode").load()
+	vim.o.runtimepath = vim.o.runtimepath .. "," .. os.getenv("HOME") .. "/.config/nvim/nvim/snippets/friendly-snippets,"
+	require("luasnip/loaders/from_vscode").lazy_load() -- load snippets of friendly/snippets
+	require("luasnip/loaders/from_vscode").lazy_load({ paths = "~/.config/nvim/nvim/snippets/friendly-snippets" }) -- load your own snippets
 end
 
 return M

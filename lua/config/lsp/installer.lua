@@ -13,10 +13,10 @@ function M.setup(servers, options)
         server:setup(opts)
       end)
 
-      if not server:is_installed() then
-        utils.info("Installing " .. server.name)
-        server:install()
-      end
+      -- if not server:is_installed() then
+      --   utils.info("Installing " .. server.name)
+      --   server:install()
+      -- end
     else
       utils.error(server)
     end

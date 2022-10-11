@@ -3,11 +3,12 @@ local M = {}
 function M.setup()
   local coq = require "coq"
 	vim.g.coq_settings = {
+		auto_start = 'shut-up',
 		keymap = {
 			jump_to_mark = "", -- no jump_to_mark mapping
 		},
 		clients = {
-			snippets = { enabled = false }, -- disable coq snippets
+			snippets = { enabled = true }, -- disable coq snippets
 		},
 	}
   coq.Now() -- Start coq
