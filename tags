@@ -22875,6 +22875,7 @@ setTimeOut	snippets/friendly-snippets/snippets/javascript/react-es7.json	/^  "se
 setb	snippets/friendly-snippets/snippets/frameworks/twig.json	/^  "setb": {$/;"	o
 setter	snippets/friendly-snippets/snippets/javascript/javascript.json	/^  "setter": {$/;"	o
 setup	lua/config/alpha.lua	/^function M.setup()$/;"	f	unknown:M
+setup	lua/config/colorizer.lua	/^function M.setup()$/;"	f	unknown:M
 setup	lua/config/coq.lua	/^function M.setup()$/;"	f	unknown:M
 setup	lua/config/indentblankline.lua	/^function M.setup()$/;"	f	unknown:M
 setup	lua/config/lsp/init.lua	/^function M.setup()$/;"	f	unknown:M

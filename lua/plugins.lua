@@ -183,6 +183,17 @@ function M.setup()
 			'rmagatti/alternate-toggler',
 		}
 
+		-- VimTeX
+		use 'lervag/vimtex'
+
+		-- Color highlighter
+		use {
+			'norcalli/nvim-colorizer.lua',
+			config = function()
+				require("config.colorizer").setup()
+			end,
+		}
+
 		-- BOOTSTRAP
 		if packer_bootstrap then
 			print "Restart Neovim required after installation!"
