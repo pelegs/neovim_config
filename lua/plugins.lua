@@ -178,6 +178,11 @@ function M.setup()
 			'iamcco/markdown-preview.nvim',
 		}
 
+		-- Flip boolean values
+		use {
+			'rmagatti/alternate-toggler',
+		}
+
 		-- BOOTSTRAP
 		if packer_bootstrap then
 			print "Restart Neovim required after installation!"

@@ -47,4 +47,7 @@ keymap("n", "<C-Up>", "<C-\\><C-n><C-w><Up>", default_opts)
 keymap("n", "<C-Down>", "<C-\\><C-n><C-w><Down>", default_opts)
 
 -- Tags bar
-keymap('n', '<F8>', '<cmd>TagbarToggle<CR>', default_opts)
+keymap("n", "<F8>", "<cmd>TagbarToggle<CR>", default_opts)
+
+-- Boolean flip
+keymap("n", "<S-t>", "<cmd>ToggleAlternate<CR>", default_opts)
