@@ -7,6 +7,18 @@
           "lua"
         ],
         "path": "./lua.json"
+      },
+      {
+        "language": [
+          "json"
+        ],
+        "path": "./json.json"
+      },
+      {
+        "language": [
+          "latex"
+        ],
+        "path": "./latex.json"
       }
     ]
   }

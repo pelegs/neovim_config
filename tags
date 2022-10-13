@@ -9,30 +9,53 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20220828.0/
+0	json.json	/^	"LOL wtf"$/;"	s	array:aaa.body
+0	snippets/json.json	/^	"\\"${1:name}\\": {",$/;"	s	array:snp.body
 0	snippets/lua.json	/^	"LOL wtf"$/;"	s	array:aaa.body
-0	snippets/lua.json	/^  	"use {",$/;"	s	array:usews.body
+0	snippets/lua.json	/^        "use {",$/;"	s	array:usews.body
+0	snippets/package.json	/^          "json"$/;"	s	array:contributes.snippets.1.language
+0	snippets/package.json	/^          "latex"$/;"	s	array:contributes.snippets.2.language
 0	snippets/package.json	/^          "lua"$/;"	s	array:contributes.snippets.0.language
 0	snippets/package.json	/^      {$/;"	o	array:contributes.snippets
-1	snippets/lua.json	/^	"\\t\\"${1:user}\/${2:repo}\\",",$/;"	s	array:usews.body
-2	snippets/lua.json	/^	"\\tconfig = function()",$/;"	s	array:usews.body
-3	snippets/lua.json	/^	"\\t\\trequire(\\"config.$2\\").setup()",$/;"	s	array:usews.body
-4	snippets/lua.json	/^	"\\tend",$/;"	s	array:usews.body
-5	snippets/lua.json	/^	"}"$/;"	s	array:usews.body
+0	snippets/tex.json	/^  		"aaa",$/;"	s	array:exm.body
+1	snippets/json.json	/^	"\\t\\"prefix\\": \\"$1\\",",$/;"	s	array:snp.body
+1	snippets/lua.json	/^        "\\t\\"${1:user}\/${2:repo}\\",",$/;"	s	array:usews.body
+1	snippets/package.json	/^      {$/;"	o	array:contributes.snippets
+1	snippets/tex.json	/^		"aaa",$/;"	s	array:exm.body
+2	snippets/json.json	/^	"\\t\\"body\\": [",$/;"	s	array:snp.body
+2	snippets/lua.json	/^        "\\tconfig = function()",$/;"	s	array:usews.body
+2	snippets/package.json	/^      {$/;"	o	array:contributes.snippets
+2	snippets/tex.json	/^		"aaa"$/;"	s	array:exm.body
+3	snippets/json.json	/^	"\\t\\t\\"${2:content}\\"",$/;"	s	array:snp.body
+3	snippets/lua.json	/^        "\\t\\trequire(\\"config.$2\\").setup()",$/;"	s	array:usews.body
+4	snippets/json.json	/^	"\\t],",$/;"	s	array:snp.body
+4	snippets/lua.json	/^        "\\tend",$/;"	s	array:usews.body
+5	snippets/json.json	/^	"\\t\\"description\\": \\"${3:description}\\"",$/;"	s	array:snp.body
+5	snippets/lua.json	/^        "}"$/;"	s	array:usews.body
+6	snippets/json.json	/^	"},"$/;"	s	array:snp.body
 Avoiding deprication warning	README.md	/^#### Avoiding deprication warning$/;"	t	subsection:Configuration comments for the future:""LSP
 Colorizer	README.md	/^### Colorizer$/;"	S	section:Configuration comments for the future:
 Configuration comments for the future:	README.md	/^## Configuration comments for the future:$/;"	s
 LSP	README.md	/^### LSP$/;"	S	section:Configuration comments for the future:
+aaa	json.json	/^  "aaa": {$/;"	o
 aaa	snippets/lua.json	/^  "aaa": {$/;"	o
+body	json.json	/^    "body": [$/;"	a	object:aaa
+body	snippets/json.json	/^    "body": [$/;"	a	object:snp
 body	snippets/lua.json	/^    "body": [$/;"	a	object:aaa
-body	snippets/lua.json	/^  "body": [$/;"	a	object:usews
+body	snippets/lua.json	/^    "body": [$/;"	a	object:usews
+body	snippets/tex.json	/^  	"body": [$/;"	a	object:exm
 config	lua/plugins.lua	/^			config = function ()$/;"	f
 config	lua/plugins.lua	/^			config = function()$/;"	f
 contributes	snippets/package.json	/^  "contributes": {$/;"	o
+description	json.json	/^    "description": "Test for own snippets"$/;"	s	object:aaa
+description	snippets/json.json	/^    "description": "Add new snippet"$/;"	s	object:snp
+description	snippets/lua.json	/^    "description": "Add plugins with packer"$/;"	s	object:usews
 description	snippets/lua.json	/^    "description": "Test for own snippets"$/;"	s	object:aaa
-description	snippets/lua.json	/^  "description": "Add plugins with packer"$/;"	s	object:usews
+description	snippets/tex.json	/^  	"description": "Example box environment"$/;"	s	object:exm
 dump	lua/utils/init.lua	/^_G.dump = function(...)$/;"	f	unknown:_G
 error	lua/utils/init.lua	/^function M.error(msg, name)$/;"	f	unknown:M
 error_msg	plugin/packer_compiled.lua	/^local no_errors, error_msg = pcall(function()$/;"	f
+exm	snippets/tex.json	/^  "exm": {$/;"	o
 find_buffers	lua/utils/finder.lua	/^function M.find_buffers()$/;"	f	unknown:M
 find_files	lua/utils/finder.lua	/^function M.find_files()$/;"	f	unknown:M
 footer	lua/config/alpha.lua	/^  local function footer()$/;"	f
@@ -40,6 +63,8 @@ header	lua/config/alpha.lua	/^  local function header()$/;"	f
 info	lua/utils/init.lua	/^function M.info(msg, name)$/;"	f	unknown:M
 keymappings	lua/config/lsp/keymaps.lua	/^local function keymappings(client, bufnr)$/;"	f
 language	snippets/package.json	/^        "language": [$/;"	a	object:contributes.snippets.0
+language	snippets/package.json	/^        "language": [$/;"	a	object:contributes.snippets.1
+language	snippets/package.json	/^        "language": [$/;"	a	object:contributes.snippets.2
 lazy_load_module	plugin/packer_compiled.lua	/^local function lazy_load_module(module_name)$/;"	f
 log	lua/utils/init.lua	/^function M.log(msg, hl, name)$/;"	f	unknown:M
 map	lua/config/nerdtree.lua	/^local function map(mode, lhs, rhs, opts)$/;"	f
@@ -47,10 +72,15 @@ name	snippets/package.json	/^  "name": "my_snippets",$/;"	s
 on_attach	lua/config/lsp/init.lua	/^local function on_attach(client, bufnr)$/;"	f
 open_fn	lua/plugins.lua	/^			open_fn = function()$/;"	f
 packer_init	lua/plugins.lua	/^	local function packer_init()$/;"	f
+path	snippets/package.json	/^        "path": ".\/json.json"$/;"	s	object:contributes.snippets.1
+path	snippets/package.json	/^        "path": ".\/latex.json"$/;"	s	object:contributes.snippets.2
 path	snippets/package.json	/^        "path": ".\/lua.json"$/;"	s	object:contributes.snippets.0
 plugins	lua/plugins.lua	/^	local function plugins(use)$/;"	f
+prefix	json.json	/^    "prefix": "aaa",$/;"	s	object:aaa
+prefix	snippets/json.json	/^    "prefix": "snp",$/;"	s	object:snp
 prefix	snippets/lua.json	/^    "prefix": "aaa",$/;"	s	object:aaa
-prefix	snippets/lua.json	/^  "prefix": "usews",$/;"	s	object:usews
+prefix	snippets/lua.json	/^    "prefix": "usews",$/;"	s	object:usews
+prefix	snippets/tex.json	/^  	"prefix": "exm",$/;"	s	object:exm
 prequire	lua/utils/init.lua	/^_G.prequire = function(...)$/;"	f	unknown:_G
 prompt	lua/utils/finder.lua	/^  vim.ui.select(results, { prompt = "Find buffer:" }, function(selected)$/;"	f
 save_profiles	plugin/packer_compiled.lua	/^local function save_profiles(threshold)$/;"	f
@@ -74,6 +104,7 @@ setup	lua/config/whichkey.lua	/^function M.setup()$/;"	f	unknown:M
 setup	lua/plugins.lua	/^function M.setup()$/;"	f	unknown:M
 snippets	snippets/package.json	/^    "snippets": [$/;"	a	object:contributes
 sniprun	README.md	/^### sniprun$/;"	S	section:Configuration comments for the future:
+snp	snippets/json.json	/^  "snp": {$/;"	o
 t	lua/utils/init.lua	/^function M.t(str)$/;"	f	unknown:M
 time	plugin/packer_compiled.lua	/^  time = function(chunk, start) end$/;"	f
 time	plugin/packer_compiled.lua	/^  time = function(chunk, start)$/;"	f
