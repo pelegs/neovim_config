@@ -9,7 +9,6 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20220828.0/
-0	json.json	/^	"LOL wtf"$/;"	s	array:aaa.body
 0	snippets/json.json	/^	"\\"${1:name}\\": {",$/;"	s	array:snp.body
 0	snippets/lua.json	/^	"LOL wtf"$/;"	s	array:aaa.body
 0	snippets/lua.json	/^        "use {",$/;"	s	array:usews.body
@@ -37,9 +36,7 @@ Avoiding deprication warning	README.md	/^#### Avoiding deprication warning$/;"	t
 Colorizer	README.md	/^### Colorizer$/;"	S	section:Configuration comments for the future:
 Configuration comments for the future:	README.md	/^## Configuration comments for the future:$/;"	s
 LSP	README.md	/^### LSP$/;"	S	section:Configuration comments for the future:
-aaa	json.json	/^  "aaa": {$/;"	o
 aaa	snippets/lua.json	/^  "aaa": {$/;"	o
-body	json.json	/^    "body": [$/;"	a	object:aaa
 body	snippets/json.json	/^    "body": [$/;"	a	object:snp
 body	snippets/lua.json	/^    "body": [$/;"	a	object:aaa
 body	snippets/lua.json	/^    "body": [$/;"	a	object:usews
@@ -47,7 +44,6 @@ body	snippets/tex.json	/^  	"body": [$/;"	a	object:exm
 config	lua/plugins.lua	/^			config = function ()$/;"	f
 config	lua/plugins.lua	/^			config = function()$/;"	f
 contributes	snippets/package.json	/^  "contributes": {$/;"	o
-description	json.json	/^    "description": "Test for own snippets"$/;"	s	object:aaa
 description	snippets/json.json	/^    "description": "Add new snippet"$/;"	s	object:snp
 description	snippets/lua.json	/^    "description": "Add plugins with packer"$/;"	s	object:usews
 description	snippets/lua.json	/^    "description": "Test for own snippets"$/;"	s	object:aaa
@@ -76,7 +72,6 @@ path	snippets/package.json	/^        "path": ".\/json.json"$/;"	s	object:contrib
 path	snippets/package.json	/^        "path": ".\/latex.json"$/;"	s	object:contributes.snippets.2
 path	snippets/package.json	/^        "path": ".\/lua.json"$/;"	s	object:contributes.snippets.0
 plugins	lua/plugins.lua	/^	local function plugins(use)$/;"	f
-prefix	json.json	/^    "prefix": "aaa",$/;"	s	object:aaa
 prefix	snippets/json.json	/^    "prefix": "snp",$/;"	s	object:snp
 prefix	snippets/lua.json	/^    "prefix": "aaa",$/;"	s	object:aaa
 prefix	snippets/lua.json	/^    "prefix": "usews",$/;"	s	object:usews
