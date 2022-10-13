@@ -21,3 +21,15 @@ to
 ```lua
 if client.supports_method "textDocument/formatting" then
 ```
+
+### Colorizer
+After installing `colorizer`, the following error might appear:
+```lua
+Error detected while processing ~/.config/nvim/init.lua:
+&termguicolors must be set
+```
+To fix, simply add
+```lua
+vim.opt.termguicolors = true
+```
+to `init.lua`.

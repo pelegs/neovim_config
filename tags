@@ -8181,6 +8181,7 @@ Class Definition	snippets/friendly-snippets/snippets/javascript/typescript.json	
 Class definition	snippets/friendly-snippets/snippets/ruby.json	/^	"Class definition": {$/;"	o
 Class definition with initialize	snippets/friendly-snippets/snippets/ruby.json	/^	"Class definition with initialize": {$/;"	o
 Cloud	snippets/friendly-snippets/snippets/plantuml.json	/^  "Cloud": {$/;"	o
+Colorizer	README.md	/^### Colorizer$/;"	S	section:Configuration comments for the future:
 Compactitem	snippets/friendly-snippets/snippets/latex/latex-snippets.json	/^  "Compactitem": {$/;"	o
 Components	snippets/friendly-snippets/snippets/mint.json	/^  "Components": {$/;"	o
 Components Tags	snippets/friendly-snippets/snippets/mint.json	/^  "Components Tags": {$/;"	o
@@ -22875,6 +22876,7 @@ setTimeOut	snippets/friendly-snippets/snippets/javascript/react-es7.json	/^  "se
 setb	snippets/friendly-snippets/snippets/frameworks/twig.json	/^  "setb": {$/;"	o
 setter	snippets/friendly-snippets/snippets/javascript/javascript.json	/^  "setter": {$/;"	o
 setup	lua/config/alpha.lua	/^function M.setup()$/;"	f	unknown:M
+setup	lua/config/boole.lua	/^function M.setup()$/;"	f	unknown:M
 setup	lua/config/colorizer.lua	/^function M.setup()$/;"	f	unknown:M
 setup	lua/config/coq.lua	/^function M.setup()$/;"	f	unknown:M
 setup	lua/config/indentblankline.lua	/^function M.setup()$/;"	f	unknown:M

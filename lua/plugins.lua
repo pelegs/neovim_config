@@ -103,13 +103,13 @@ function M.setup()
 
 		-- Luasnip?
 		use {
-			'L3MON4D3/LuaSnip',
+			"L3MON4D3/LuaSnip",
 			config = function ()
 				require("config.luasnip").setup()
 			end
 		}
-		-- use 'mendes-davi/coq_luasnip'
-		use 'rafamadriz/friendly-snippets'
+		-- use "mendes-davi/coq_luasnip"
+		use "rafamadriz/friendly-snippets"
 
 		-- WhichKey
 		use {
@@ -129,22 +129,22 @@ function M.setup()
 
 		-- Lualine
 		use {
-			'nvim-lualine/lualine.nvim',
-			requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+			"nvim-lualine/lualine.nvim",
+			requires = { "kyazdani42/nvim-web-devicons", opt = true },
 			config = function()
 				require("config.lualine").setup()
 			end,
 		}
 
 		-- Surrounding ysw)
-		use 'tpope/vim-surround'
+		use "tpope/vim-surround"
 
 		-- Commenting gcc/gc
-		use 'tpope/vim-commentary'
+		use "tpope/vim-commentary"
 
 		-- Nerdtree navigation
 		use {
-			'preservim/nerdtree',
+			"preservim/nerdtree",
 			config = function()
 				require("config.nerdtree").setup()
 			end,
@@ -152,7 +152,7 @@ function M.setup()
 
 		-- Sniprun
 		use {
-			'michaelb/sniprun',
+			"michaelb/sniprun",
 			run = "bash install.sh",
 			config = function()
 				require("config.sniprun").setup()
@@ -161,34 +161,40 @@ function M.setup()
 
 		-- Visible marks
 		use {
-			'chentoast/marks.nvim',
+			"chentoast/marks.nvim",
 			config = function()
 				require("config.marks").setup()
 			end,
 		}
 
 		-- Tagsbar
-		use 'preservim/tagbar'
+		use "preservim/tagbar"
 
 		-- Gutentags
-		use 'ludovicchabant/vim-gutentags'
+		use "ludovicchabant/vim-gutentags"
 
 		-- Markdown preview
 		use {
-			'iamcco/markdown-preview.nvim',
+			"iamcco/markdown-preview.nvim",
 		}
 
 		-- Flip boolean values
+		-- use {
+		-- 	"rmagatti/alternate-toggler",
+		-- }
 		use {
-			'rmagatti/alternate-toggler',
+			"nat-418/boole.nvim",
+			config = function()
+				require("config.boole").setup()
+			end
 		}
 
 		-- VimTeX
-		use 'lervag/vimtex'
+		use "lervag/vimtex"
 
 		-- Color highlighter
 		use {
-			'norcalli/nvim-colorizer.lua',
+			"norcalli/nvim-colorizer.lua",
 			config = function()
 				require("config.colorizer").setup()
 			end,
