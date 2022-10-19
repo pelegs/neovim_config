@@ -23,7 +23,7 @@ opt.timeoutlen = 500 -- Time in miliseconds to wait for a mapped sequence to com
 opt.cursorline = true
 opt.cursorcolumn = true
 vim.cmd [[
-	highlight CursorLine guibg=#1a1a20 gui=bold
+	highlight CursorLine guibg=#1a1a20
 ]]
 
 -- Highlight on yank
