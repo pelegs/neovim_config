@@ -63,17 +63,20 @@ find_files	lua/utils/finder.lua	/^function M.find_files()$/;"	f	unknown:M
 footer	lua/config/alpha.lua	/^  local function footer()$/;"	f
 fopen	snippets/python.json	/^  "fopen": {$/;"	o
 header	lua/config/alpha.lua	/^  local function header()$/;"	f
+highlight	colors/onedark.lua	/^M.highlight = function(group, options)$/;"	f	unknown:M
 info	lua/utils/init.lua	/^function M.info(msg, name)$/;"	f	unknown:M
-keymappings	lua/config/lsp/keymaps.lua	/^local function keymappings(client, bufnr)$/;"	f
+keymappings	lua/config/lsp_temp_later/keymaps.lua	/^local function keymappings(client, bufnr)$/;"	f
 language	snippets/package.json	/^        "language": [$/;"	a	object:contributes.snippets.0
 language	snippets/package.json	/^        "language": [$/;"	a	object:contributes.snippets.1
 language	snippets/package.json	/^        "language": [$/;"	a	object:contributes.snippets.2
 language	snippets/package.json	/^        "language": [$/;"	a	object:contributes.snippets.3
 lazy_load_module	plugin/packer_compiled.lua	/^local function lazy_load_module(module_name)$/;"	f
+link	colors/onedark.lua	/^M.link = function(groupa, groupb)$/;"	f	unknown:M
 log	lua/utils/init.lua	/^function M.log(msg, hl, name)$/;"	f	unknown:M
 map	lua/config/nerdtree.lua	/^local function map(mode, lhs, rhs, opts)$/;"	f
 name	snippets/package.json	/^  "name": "my_snippets",$/;"	s
-on_attach	lua/config/lsp/init.lua	/^local function on_attach(client, bufnr)$/;"	f
+on_attach	lua/config/lsp.lua	/^	local on_attach = function(client, bufnr)$/;"	f
+on_attach	lua/config/lsp_temp_later/init.lua	/^local function on_attach(client, bufnr)$/;"	f
 open_fn	lua/plugins.lua	/^			open_fn = function()$/;"	f
 packer_init	lua/plugins.lua	/^	local function packer_init()$/;"	f
 path	snippets/package.json	/^        "path": ".\/json.json"$/;"	s	object:contributes.snippets.1
@@ -90,14 +93,16 @@ prequire	lua/utils/init.lua	/^_G.prequire = function(...)$/;"	f	unknown:_G
 prompt	lua/utils/finder.lua	/^  vim.ui.select(results, { prompt = "Find buffer:" }, function(selected)$/;"	f
 py_init	lua/config/luasnip.lua	/^	local function py_init()$/;"	f
 save_profiles	plugin/packer_compiled.lua	/^local function save_profiles(threshold)$/;"	f
+setup	colors/onedark.lua	/^M.setup = function()$/;"	f	unknown:M
 setup	lua/config/alpha.lua	/^function M.setup()$/;"	f	unknown:M
 setup	lua/config/boole.lua	/^function M.setup()$/;"	f	unknown:M
 setup	lua/config/colorizer.lua	/^function M.setup()$/;"	f	unknown:M
 setup	lua/config/coq.lua	/^function M.setup()$/;"	f	unknown:M
 setup	lua/config/indentblankline.lua	/^function M.setup()$/;"	f	unknown:M
-setup	lua/config/lsp/init.lua	/^function M.setup()$/;"	f	unknown:M
-setup	lua/config/lsp/installer.lua	/^function M.setup(servers, options)$/;"	f	unknown:M
-setup	lua/config/lsp/keymaps.lua	/^function M.setup(client, bufnr)$/;"	f	unknown:M
+setup	lua/config/lsp.lua	/^function M.setup()$/;"	f	unknown:M
+setup	lua/config/lsp_temp_later/init.lua	/^function M.setup()$/;"	f	unknown:M
+setup	lua/config/lsp_temp_later/installer.lua	/^function M.setup(servers, options)$/;"	f	unknown:M
+setup	lua/config/lsp_temp_later/keymaps.lua	/^function M.setup(client, bufnr)$/;"	f	unknown:M
 setup	lua/config/lualine.lua	/^function M.setup()$/;"	f	unknown:M
 setup	lua/config/luasnip.lua	/^function M.setup()$/;"	f	unknown:M
 setup	lua/config/markdown_preview.lua	/^function M.setup()$/;"	f	unknown:M

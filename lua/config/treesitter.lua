@@ -1,16 +1,15 @@
 local M = {}
 
 function M.setup()
-	require("nvim-treesitter").setup {
-		modules = {
-			highlight = {
-				additional_vim_regex_highlighting = true,
-				custom_captures = {},
-				disable = {},
-				enable = true,
-				module_path = "nvim-treesitter.highlight"
-			},
-		}
+	require'nvim-treesitter.configs'.setup {
+		ensure_installed = { "c", "lua", "rust", "python" },
+		sync_install = false,
+		auto_install = true,
+		indent = true,
+		highlight = {
+			enable = true,
+			additional_vim_regex_highlighting = true,
+		},
 	}
 end
 

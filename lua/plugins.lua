@@ -101,7 +101,7 @@ function M.setup()
 			disable = false,
 		}
 
-		-- Luasnip?
+		-- Luasnip
 		use {
 			"L3MON4D3/LuaSnip",
 			config = function ()
