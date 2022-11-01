@@ -46,6 +46,10 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Close brackets etc.
   use "numToStr/Comment.nvim" -- Comment support
+  use "lukas-reineke/indent-blankline.nvim"
+  use "chentoast/marks.nvim"
+  use "lervag/vimtex"
+  use "norcalli/nvim-colorizer.lua"
 
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out

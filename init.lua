@@ -8,3 +8,7 @@ require "user.telescope"
 require "user.treesitter"
 require "user.autopairs"
 require "user.comment"
+require "user.blankline"
+require "user.marks"
+--[[ require "use.vimtex" ]]
+require "user.colorize"
