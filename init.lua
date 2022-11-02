@@ -1,14 +1,15 @@
-require "user.options"
-require "user.keymaps"
-require "user.plugins"
-require "user.colorscheme"
-require "user.cmp"
-require "user.lsp"
-require "user.telescope"
-require "user.treesitter"
-require "user.autopairs"
-require "user.comment"
-require "user.blankline"
-require "user.marks"
+require("user.options")
+require("user.keymaps")
+require("user.plugins")
+require("user.colorscheme")
+require("user.cmp")
+require("user.lsp")
+require("user.telescope")
+require("user.treesitter")
+require("user.autopairs")
+require("user.comment")
+require("user.blankline")
+require("user.marks")
 --[[ require "use.vimtex" ]]
-require "user.colorize"
+require("user.colorize")
+require("user.lualine")
