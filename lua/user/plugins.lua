@@ -50,6 +50,7 @@ return packer.startup(function(use)
   use "chentoast/marks.nvim"
   use "lervag/vimtex"
   use "norcalli/nvim-colorizer.lua"
+  use "tpope/vim-surround"
 
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
@@ -90,6 +91,13 @@ return packer.startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
+
+  -- git
+  use "lewis6991/gitsigns.nvim"
+
+  -- Nvimtree
+  -- nvim-web-devicons is installed via require in lualine
+  use "kyazdani42/nvim-tree.lua"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

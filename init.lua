@@ -13,3 +13,5 @@ require("user.marks")
 --[[ require "use.vimtex" ]]
 require("user.colorize")
 require("user.lualine")
+require("user.gitsigns")
+require("user.nvim-tree")
