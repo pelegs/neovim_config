@@ -99,6 +99,11 @@ return packer.startup(function(use)
   -- nvim-web-devicons is installed via require in lualine
   use "kyazdani42/nvim-tree.lua"
 
+  -- Bufferline
+  use "akinsho/bufferline.nvim"
+  use "moll/vim-bbye"
+
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/home/pelegs/.config/share/nvim/site/pack/packer/start/Telescope-media-files.nvim",
     url = "https://github.com/nvim-telescope/Telescope-media-files.nvim"
   },
+  ["bufferline.nvim"] = {
+    loaded = true,
+    path = "/home/pelegs/.config/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/pelegs/.config/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -229,6 +234,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/pelegs/.config/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-bbye"] = {
+    loaded = true,
+    path = "/home/pelegs/.config/share/nvim/site/pack/packer/start/vim-bbye",
+    url = "https://github.com/moll/vim-bbye"
   },
   ["vim-surround"] = {
     loaded = true,
