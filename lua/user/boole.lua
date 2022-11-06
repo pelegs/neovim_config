@@ -10,7 +10,8 @@ boole.setup {
   },
   -- User defined loops
   additions = {
-    {'Foo', 'Bar'},
+    {'Foo', 'Bar', 'Baz', 'Bla'},
+    {'foo', 'bar', 'baz', 'bla'},
     {'tic', 'tac', 'toe'}
   },
 }
