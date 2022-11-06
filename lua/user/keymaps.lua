@@ -86,7 +86,9 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 
------------------
--- Toggle-bool --
------------------
---[[ keymap("n", "<leader>r", ":ToggleBool<cr>", opts) ]]
+-------------
+-- SnipRun --
+-------------
+keymap("v", "<C-s>", ":SnipRun<cr>", opts)
+keymap("n", "<C-s>", ":SnipRun<cr>", opts)
+keymap("n", "<C-d>", ":SnipClose<cr>", opts)

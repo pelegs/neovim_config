@@ -20,3 +20,4 @@ require("user.bufferline")
 require("user.toggleterm")
 --[[ require("user.togglebool") ]]
 require("user.boole")
+--[[ require("user.sniprun") ]]
