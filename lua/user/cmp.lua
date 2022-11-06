@@ -8,19 +8,19 @@ if not snip_status_ok then
   return
 end
 
-require("luasnip/loaders/from_vscode").lazy_load()
-require("luasnip/loaders/from_vscode").lazy_load({ paths = "./snippets" }) -- load own snippets
+--[[ require("luasnip/loaders/from_vscode").lazy_load() ]]
+--[[ require("luasnip/loaders/from_vscode").lazy_load({ paths = "./snippets" }) -- load own snippets ]]
 	
-local luasnip = require "luasnip"
-luasnip.config.set_config {
-  history = true,
-  updateevents = "TextChanged, TextChangedI",
-}
-vim.keymap.set({ "i", "s" }, "<c-e>", function()
-  if luasnip.expand_or_jumpable() then
-    luasnip.expand_or_jump()
-  end
-end, { silent = true })
+--[[ local luasnip = require "luasnip" ]]
+--[[ luasnip.config.set_config { ]]
+--[[   history = true, ]]
+--[[   updateevents = "TextChanged, TextChangedI", ]]
+--[[ } ]]
+--[[ vim.keymap.set({ "i", "s" }, "<c-e>", function() ]]
+--[[   if luasnip.expand_or_jumpable() then ]]
+--[[     luasnip.expand_or_jump() ]]
+--[[   end ]]
+--[[ end, { silent = true }) ]]
 
 local check_backspace = function()
   local col = vim.fn.col "." - 1
