@@ -17,3 +17,5 @@ require("user.gitsigns")
 require("user.nvim-tree")
 require("user.bufferline")
 require("user.toggleterm")
+--[[ require("user.togglebool") ]]
+require("user.boole")

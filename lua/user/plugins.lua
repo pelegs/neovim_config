@@ -51,6 +51,8 @@ return packer.startup(function(use)
   use "lervag/vimtex"
   use "norcalli/nvim-colorizer.lua"
   use "tpope/vim-surround"
+  --[[ use "sagarrakshe/toggle-bool" ]]
+  use "nat-418/boole.nvim"
 
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out

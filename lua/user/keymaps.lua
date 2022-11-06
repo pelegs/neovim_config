@@ -18,6 +18,7 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
+
 ------------
 -- Normal --
 ------------
@@ -58,6 +59,7 @@ keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 keymap("v", "p", '"_dP', opts)
 
+
 ------------------
 -- Visual Block --
 ------------------
@@ -66,6 +68,7 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+
 
 --------------
 -- Terminal --
@@ -81,3 +84,9 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 -- Nvim-tree --
 ---------------
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+
+
+-----------------
+-- Toggle-bool --
+-----------------
+--[[ keymap("n", "<leader>r", ":ToggleBool<cr>", opts) ]]

@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/home/pelegs/.config/share/nvim/site/pack/packer/start/Telescope-media-files.nvim",
     url = "https://github.com/nvim-telescope/Telescope-media-files.nvim"
   },
+  ["boole.nvim"] = {
+    loaded = true,
+    path = "/home/pelegs/.config/share/nvim/site/pack/packer/start/boole.nvim",
+    url = "https://github.com/nat-418/boole.nvim"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/home/pelegs/.config/share/nvim/site/pack/packer/start/bufferline.nvim",
