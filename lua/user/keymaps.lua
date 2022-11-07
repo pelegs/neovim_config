@@ -79,6 +79,11 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+---------
+-- LSP --
+---------
+-- format
+keymap("n", "<leader>f", ":lua vim.lsp.buf.format()<cr>", term_opts)
 
 ---------------
 -- Nvim-tree --

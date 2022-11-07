@@ -76,6 +76,9 @@ return packer.startup(function(use)
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
 
+  -- Null-ls
+  use "jose-elias-alvarez/null-ls.nvim"
+
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   use "nvim-telescope/Telescope-media-files.nvim"
