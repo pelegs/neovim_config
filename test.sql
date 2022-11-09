@@ -1,1 +1,0 @@
-SELECT * FROM table WHERE d>4;
