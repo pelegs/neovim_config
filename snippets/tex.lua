@@ -15,7 +15,7 @@ local rep = require("luasnip.extras").rep
 local snippets, autosnippets = {}, {} --}}}
 
 local group = vim.api.nvim_create_augroup("Lua Snippets", { clear = true })
-local file_pattern = "*.py"
+local file_pattern = "*.tex"
 
 local function cs(trigger, nodes, opts) --{{{
 	local snippet = s(trigger, nodes)
@@ -71,56 +71,40 @@ end --}}}
 
 -- Start Refactoring --
 
-local function py_init()
-	return
-sn(
-		nil,
-		c(1, {
-			t(""),
-			sn(1, {
-				t(", "),
-				i(1),
-				d(2, py_init),
-			}),
-		})
-	)
-end
-
--- splits the string of the comma separated argument list into the arguments
--- and returns the text-/insert- or restore-nodes
-local function to_init_assign(args)
-	local tab = {}
-	local a = args[1][1]
-	if #a == 0 then
-		table.insert(tab, t({ "", "\tpass" }))
-	else
-		local cnt = 1
-		for e in string.gmatch(a, " ?([^,]*) ?") do
-			if #e > 0 then
-				table.insert(tab, t({ "", "\tself." }))
-				-- use a restore-node to be able to keep the possibly changed attribute name
-				-- (otherwise this function would always restore the default, even if the user
-				-- changed the name)
-				table.insert(tab, r(cnt, tostring(cnt), i(nil, e)))
-				table.insert(tab, t(" = "))
-				table.insert(tab, t(e))
-				cnt = cnt + 1
-			end
+table_node= function(args)
+	local tabs = {}
+	local count
+	table = args[1][1]:gsub("%s",""):gsub("|","")
+	count = table:len()
+	for j=1, count do
+		local iNode
+		iNode = i(j)
+		tabs[2*j-1] = iNode
+		if j~=count then
+			tabs[2*j] = t" & "
 		end
 	end
-	return
-sn(nil, tab)
+	return sn(nil, tabs)
 end
 
--- create the actual snippet
-local pyinitSnippet = s(
-	"pyinit",
-	fmt([[def __init__(self{}):{}]], {
-		d(1, py_init),
-		d(2, to_init_assign, { 1 }),
-	})
-)
-table.insert(snippets, pyinitSnippet)
+rec_table = function ()
+	return sn(nil, {
+		c(1, {
+			t({""}),
+			sn(nil, {t{"\\\\",""} ,d(1,table_node, {ai[1]}), d(2, rec_table, {ai[1]})})
+		}),
+	});
+end
+
+local tabSnippet = s("table", {
+	t"\\begin{tabular}{",
+	i(1,"0"),
+	t{"}",""},
+	d(2, table_node, {1}, {}),
+	d(3, rec_table, {1}),
+	t{"","\\end{tabular}"}
+})
+table.insert(snippets, tabSnippet)
 
 -- End Refactoring --
 
