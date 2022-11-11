@@ -127,6 +127,15 @@ local function to_init_assign(args)
 sn(nil, tab)
 end
 
+local pyinitSnippet = s(
+	"pyinit",
+	fmt([[def __init__(self{}):{}]], {
+		d(1, py_init),
+		d(2, to_init_assign, { 1 }),
+	})
+)
+table.insert(snippets, pyinitSnippet)
+
 local function create_box(opts)
   local pl = opts.padding_length or 4
   local function pick_comment_start_and_end()
@@ -173,16 +182,6 @@ local box  = s(
   create_box{ padding_length = 8 }
 )
 table.insert(snippets, box)
-
--- create the actual snippet
-local pyinitSnippet = s(
-	"pyinit",
-	fmt([[def __init__(self{}):{}]], {
-		d(1, py_init),
-		d(2, to_init_assign, { 1 }),
-	})
-)
-table.insert(snippets, pyinitSnippet)
 
 -- End Refactoring --
 
