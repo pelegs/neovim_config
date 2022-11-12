@@ -86,6 +86,17 @@ end
 
 -- Start Refactoring --
 
+local baseTemplate = s("baseTemplate", {
+	t"\\documentclass{",
+	i(1, "article"),
+	t{"}", ""},
+	t{"", "\\begin{document}"},
+  t{"", ""},
+  i(1, "% content"),
+	t{"","\\end{document}"},
+})
+table.insert(snippets, baseTemplate)
+
 table_node= function(args)
 	local tabs = {}
 	local count

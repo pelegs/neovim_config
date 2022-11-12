@@ -1,0 +1,12 @@
+{
+  "Template": {
+    "prefix": "base",
+    "body": [
+      "\\documentclass{article}",
+      "",
+      "\\begin{document}",
+      "",
+      "\\end{document}"
+    ]
+  }
+}
