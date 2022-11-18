@@ -53,6 +53,7 @@ return packer.startup(function(use)
   use "tpope/vim-surround"
   --[[ use "sagarrakshe/toggle-bool" ]]
   use "nat-418/boole.nvim"
+  use "xorid/swap-split.nvim"
 
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out

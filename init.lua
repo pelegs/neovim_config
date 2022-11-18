@@ -21,3 +21,4 @@ require("user.toggleterm")
 --[[ require("user.togglebool") ]]
 require("user.boole")
 --[[ require("user.sniprun") ]]
+require("user.swap-split")

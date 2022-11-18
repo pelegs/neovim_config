@@ -245,6 +245,11 @@ _G.packer_plugins = {
     path = "/home/pelegs/.config/share/nvim/site/pack/packer/start/sniprun",
     url = "https://github.com/michaelb/sniprun"
   },
+  ["swap-split.nvim"] = {
+    loaded = true,
+    path = "/home/pelegs/.config/share/nvim/site/pack/packer/start/swap-split.nvim",
+    url = "https://github.com/xorid/swap-split.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/pelegs/.config/share/nvim/site/pack/packer/start/telescope.nvim",
