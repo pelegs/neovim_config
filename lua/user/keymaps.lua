@@ -79,11 +79,13 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+
 ---------
 -- LSP --
 ---------
 -- format
 keymap("n", "<leader>f", ":lua vim.lsp.buf.format()<cr>", term_opts)
+
 
 ---------------
 -- Nvim-tree --
@@ -97,3 +99,12 @@ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 keymap("v", "<C-s>", ":SnipRun<cr>", opts)
 keymap("n", "<C-s>", ":SnipRun<cr>", opts)
 keymap("n", "<C-d>", ":SnipClose<cr>", opts)
+
+
+-------------
+-- Toggles --
+-------------
+keymap("n", "<leader>t", ":ToggleTerm<cr>", opts)
+keymap("n", "<leader>p", ":lua _PYTHON_TOGGLE()<cr>", opts)
+keymap("n", "<leader>g", ":lua _GITUI_TOGGLE()<cr>", opts)
+keymap("n", "<leader>h", ":lua _HTOP_TOGGLE()<cr>", opts)
