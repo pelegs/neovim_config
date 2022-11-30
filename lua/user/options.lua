@@ -25,7 +25,6 @@ local options = {
   expandtab = true,                        -- convert tabs to spaces
   shiftwidth = 2,                          -- the number of spaces inserted for each indentation
   tabstop = 2,                             -- insert 2 spaces for a tab
-  cursorline = true,                       -- highlight the current line
   number = true,                           -- set numbered lines
   relativenumber = true,                   -- set relative numbered lines
   numberwidth = 4,                         -- set number column width to 2 {default 4}
@@ -35,6 +34,7 @@ local options = {
   sidescrolloff = 8,
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
   breakindent = true,                      -- indent line wraps
+  cursorline = true,                       -- highlight the current line
   cursorcolumn = true,
 }
 
@@ -50,6 +50,11 @@ vim.cmd [[
     autocmd!
     autocmd TextYankPost * silent! lua vim.highlight.on_yank()
   augroup end
+]]
+
+-- Put a vertical cursorline at 80 if python
+vim.cmd [[
+  autocmd Filetype python set colorcolumn=80
 ]]
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
