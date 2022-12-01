@@ -240,6 +240,11 @@ _G.packer_plugins = {
     path = "/home/pelegs/.config/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
+  ["pretty-fold.nvim"] = {
+    loaded = true,
+    path = "/home/pelegs/.config/share/nvim/site/pack/packer/start/pretty-fold.nvim",
+    url = "https://github.com/anuvyklack/pretty-fold.nvim"
+  },
   sniprun = {
     loaded = true,
     path = "/home/pelegs/.config/share/nvim/site/pack/packer/start/sniprun",
@@ -274,6 +279,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/pelegs/.config/share/nvim/site/pack/packer/start/vimtex",
     url = "https://github.com/lervag/vimtex"
+  },
+  ["zen-mode.nvim"] = {
+    loaded = true,
+    path = "/home/pelegs/.config/share/nvim/site/pack/packer/start/zen-mode.nvim",
+    url = "https://github.com/folke/zen-mode.nvim"
   }
 }
 

@@ -22,3 +22,5 @@ require("user.toggleterm")
 require("user.boole")
 --[[ require("user.sniprun") ]]
 require("user.swap-split")
+require("user.pretty-fold")
+require("user.zen-mode")

@@ -54,6 +54,8 @@ return packer.startup(function(use)
   --[[ use "sagarrakshe/toggle-bool" ]]
   use "nat-418/boole.nvim"
   use "xorid/swap-split.nvim"
+  use "anuvyklack/pretty-fold.nvim" -- pretty folding
+  use "folke/zen-mode.nvim"
 
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
