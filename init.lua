@@ -20,7 +20,7 @@ require("user.bufferline")
 require("user.toggleterm")
 --[[ require("user.togglebool") ]]
 require("user.boole")
---[[ require("user.sniprun") ]]
+require("user.sniprun")
 require("user.swap-split")
 require("user.pretty-fold")
 require("user.zen-mode")

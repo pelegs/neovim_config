@@ -99,6 +99,12 @@ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 keymap("v", "<C-s>", ":SnipRun<cr>", opts)
 keymap("n", "<C-s>", ":SnipRun<cr>", opts)
 keymap("n", "<C-d>", ":SnipClose<cr>", opts)
+local sa = require('sniprun.api')
+vim.keymap.set("n", "<leader>r", function()
+  local deltaRow = vim.fn.input("Number of lines: ")
+  local r,c = unpack(vim.api.nvim_win_get_cursor(0))
+  sa.run_range(r, r+deltaRow)
+end, { silent = true })
 
 
 -------------

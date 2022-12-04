@@ -36,6 +36,8 @@ local options = {
   breakindent = true,                      -- indent line wraps
   cursorline = true,                       -- highlight the current line
   cursorcolumn = true,
+  foldmethod = "expr",
+  foldexpr = "nvim_treesitter#foldexpr()",
 }
 
 vim.opt.shortmess:append "c"
@@ -55,6 +57,15 @@ vim.cmd [[
 -- Put a vertical cursorline at 80 if python
 vim.cmd [[
   autocmd Filetype python set colorcolumn=80
+]]
+
+-- Remember folds
+vim.cmd [[
+  augroup remember_folds
+    autocmd!
+    autocmd BufWinLeave * mkview
+    autocmd BufWinEnter * silent! loadview
+  augroup END
 ]]
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
