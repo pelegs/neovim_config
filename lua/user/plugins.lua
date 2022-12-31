@@ -44,7 +44,8 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-  use "windwp/nvim-autopairs" -- Close brackets etc.
+  --[[ use "windwp/nvim-autopairs" -- Close brackets etc. ]]
+  use "m4xshen/autoclose.nvim"
   use "numToStr/Comment.nvim" -- Comment support
   use "lukas-reineke/indent-blankline.nvim"
   use "chentoast/marks.nvim"
@@ -56,6 +57,7 @@ return packer.startup(function(use)
   use "xorid/swap-split.nvim"
   use "anuvyklack/pretty-fold.nvim" -- pretty folding
   use "folke/zen-mode.nvim"
+  use {"shortcuts/no-neck-pain.nvim", tag = "*" }
 
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
