@@ -179,6 +179,14 @@ local box  = s(
 )
 table.insert(snippets, box)
 
+local mathBrackets  = s("mb", {
+  t{"\\[", ""},
+  t{"\t"},
+  i(1, "eq."),
+  t{"", "\\]"},
+})
+table.insert(snippets, mathBrackets)
+
 -- End Refactoring --
 
 return snippets, autosnippets
