@@ -356,6 +356,22 @@ require('lazy').setup({
     ft = { "markdown" },
   },
 
+  -- nvim v0.8.0
+  {
+    "kdheepak/lazygit.nvim",
+    -- optional for floating window border decoration
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
+
+  -- Terminal
+  {
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    opts = {},
+  },
+
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -591,6 +607,7 @@ local on_attach = function(_, bufnr)
   nmap('<leader>wl', function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, '[W]orkspace [L]ist Folders')
+  nmap('<leader>f', vim.lsp.buf.format, '[F]ormat code')
 
   -- Create a command `:Format` local to the LSP buffer
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
@@ -764,6 +781,110 @@ vim.cmd.colorscheme "catppuccin"
 -- Auto close parentheses and stuff
 require("autoclose").setup({})
 
+-- ToggleTerm configuration
+function _G.set_terminal_keymaps()
+  local opts = {noremap = true}
+  vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
+end
+vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+
+local Terminal = require("toggleterm.terminal").Terminal
+local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
+local gitui = Terminal:new({ cmd = "gitui", hidden = true })
+
+function _LAZYGIT_TOGGLE()
+	lazygit:toggle()
+end
+
+function _GITUI_TOGGLE()
+	gitui:toggle()
+end
+
+local node = Terminal:new({ cmd = "node", hidden = true })
+
+function _NODE_TOGGLE()
+	node:toggle()
+end
+
+local ncdu = Terminal:new({ cmd = "ncdu", hidden = true })
+
+function _NCDU_TOGGLE()
+	ncdu:toggle()
+end
+
+local htop = Terminal:new({ cmd = "htop", hidden = true })
+
+function _HTOP_TOGGLE()
+	htop:toggle()
+end
+
+local python = Terminal:new({ cmd = "ipython --TerminalInteractiveShell.editing_mode=emacs", hidden = true })
+
+function _PYTHON_TOGGLE()
+	python:toggle()
+end
+
+require("toggleterm").setup({
+	size = 20,
+	open_mapping = [[<c-\>]],
+	hide_numbers = false,
+	shade_filetypes = {},
+	shade_terminals = true,
+	shading_factor = 2,
+	start_in_insert = true,
+	insert_mappings = true,
+	persist_size = true,
+	direction = "float",
+	close_on_exit = true,
+	shell = vim.o.shell,
+	float_opts = {
+		border = "curved",
+		winblend = 0,
+		highlights = {
+			border = "Normal",
+			background = "Normal",
+		},
+	},
+})
+
+-- General keymaps
+local keymap = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+-- Better window navigation
+keymap("n", "<c-Left>", "<C-w>h", opts)
+keymap("n", "<c-Down>", "<C-w>j", opts)
+keymap("n", "<c-Up>", "<C-w>k", opts)
+keymap("n", "<c-Right>", "<C-w>l", opts)
+
+-- Resize with arrows
+keymap("n", "<c-k>", ":resize -2<CR>", opts)
+keymap("n", "<c-j>", ":resize +2<CR>", opts)
+keymap("n", "<c-h>", ":vertical resize +2<CR>", opts)
+keymap("n", "<c-l>", ":vertical resize -2<CR>", opts)
+
+-- Cancel search highlighting with ESC
+keymap("n", "<ESC>", ":nohlsearch<Bar>:echo<CR>", opts)
+
+-- Stay in indent mode
+keymap("v", "<", "<gv", opts)
+keymap("v", ">", ">gv", opts)
+
+-- Move text up and down
+keymap("v", "<A-j>", ":m .+1<CR>==", opts)
+keymap("v", "<A-k>", ":m .-2<CR>==", opts)
+keymap("v", "p", '"_dP', opts)
+
+keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
+keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+
+-- Toggles
+keymap("n", "<leader>t", ":ToggleTerm<cr>", opts)
+keymap("n", "<leader>p", ":lua _PYTHON_TOGGLE()<cr>", opts)
+keymap("n", "<leader>g", ":lua _GITUI_TOGGLE()<cr>", opts)
+keymap("n", "<leader>h", ":lua _HTOP_TOGGLE()<cr>", opts)
+keymap("n", "<leader>c", ":NoNeckPain<cr>", opts)
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
