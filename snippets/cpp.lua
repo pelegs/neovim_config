@@ -15,7 +15,7 @@ local rep = require("luasnip.extras").rep
 local snippets, autosnippets = {}, {} --}}}
 
 local group = vim.api.nvim_create_augroup("Lua Snippets", { clear = true })
-local file_pattern = "*.c"
+local file_pattern = "*.cpp"
 
 local function cs(trigger, nodes, opts) --{{{
 	local snippet = s(trigger, nodes)

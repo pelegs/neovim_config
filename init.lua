@@ -372,6 +372,22 @@ require('lazy').setup({
     opts = {},
   },
 
+
+  -- Surround
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+  }
+
+  -- PAUSE
+
+
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -435,9 +451,9 @@ for k, v in pairs(options) do
 end
 
 -- Put a vertical cursorline at 80 if python
-vim.cmd [[
-  autocmd Filetype python set colorcolumn=80
-]]
+-- vim.cmd [[
+--   autocmd Filetype py set colorcolumn=80
+-- ]]
 
 -- [[ Basic Keymaps ]]
 
@@ -890,3 +906,15 @@ keymap("n", "<leader>c", ":NoNeckPain<cr>", opts)
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+-- test
+local list_snips = function()
+	local ft_list = require("luasnip").available()[vim.o.filetype]
+	local ft_snips = {}
+	for _, item in pairs(ft_list) do
+		ft_snips[item.trigger] = item.name
+	end
+	print(vim.inspect(ft_snips))
+end
+
+vim.api.nvim_create_user_command("SnipList", list_snips, {})
