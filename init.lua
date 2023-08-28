@@ -84,7 +84,7 @@ require('lazy').setup({
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
+      { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
@@ -108,7 +108,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim',  opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -122,7 +122,8 @@ require('lazy').setup({
         changedelete = { text = '~' },
       },
       on_attach = function(bufnr)
-        vim.keymap.set('n', '<leader>gp', require('gitsigns').prev_hunk, { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
+        vim.keymap.set('n', '<leader>gp', require('gitsigns').prev_hunk,
+          { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
         vim.keymap.set('n', '<leader>gn', require('gitsigns').next_hunk, { buffer = bufnr, desc = '[G]o to [N]ext Hunk' })
         vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { buffer = bufnr, desc = '[P]review [H]unk' })
       end,
@@ -152,44 +153,44 @@ require('lazy').setup({
       --   component_separators = '|',
       --   section_separators = '',
       -- },
-  options = {
-    icons_enabled = true,
-    theme = 'auto',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
-    disabled_filetypes = {
-      statusline = {},
+      options = {
+        icons_enabled = true,
+        theme = 'auto',
+        component_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
+        disabled_filetypes = {
+          statusline = {},
+          winbar = {},
+        },
+        ignore_focus = {},
+        always_divide_middle = true,
+        globalstatus = false,
+        refresh = {
+          statusline = 1000,
+          tabline = 1000,
+          winbar = 1000,
+        }
+      },
+      sections = {
+        lualine_a = { 'mode' },
+        lualine_b = { 'branch', 'diff', 'diagnostics' },
+        lualine_c = { 'filename' },
+        lualine_x = { 'encoding', 'fileformat', 'filetype' },
+        lualine_y = { 'progress' },
+        lualine_z = { 'location' }
+      },
+      inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = { 'filename' },
+        lualine_x = { 'location' },
+        lualine_y = {},
+        lualine_z = {}
+      },
+      tabline = {},
       winbar = {},
-    },
-    ignore_focus = {},
-    always_divide_middle = true,
-    globalstatus = false,
-    refresh = {
-      statusline = 1000,
-      tabline = 1000,
-      winbar = 1000,
-    }
-  },
-  sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
-  },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
-    lualine_y = {},
-    lualine_z = {}
-  },
-  tabline = {},
-  winbar = {},
-  inactive_winbar = {},
-  extensions = {}
+      inactive_winbar = {},
+      extensions = {}
     },
   },
 
@@ -255,6 +256,7 @@ require('lazy').setup({
 
   {
     "kyazdani42/nvim-tree.lua",
+    dependencies = { 'kyazdani42/nvim-web-devicons' },
     opts = {
       disable_netrw = true,
       hijack_netrw = true,
@@ -346,6 +348,44 @@ require('lazy').setup({
     },
   },
 
+  {
+    "chentoast/marks.nvim",
+    opts = {
+      -- whether to map keybinds or not. default true
+      default_mappings = true,
+      -- which builtin marks to show. default {}
+      builtin_marks = { ".", "<", ">", "^" },
+      -- whether movements cycle back to the beginning/end of buffer. default true
+      cyclic = true,
+      -- whether the shada file is updated after modifying uppercase marks. default false
+      force_write_shada = false,
+      -- how often (in ms) to redraw signs/recompute mark positions.
+      -- higher values will have better performance but may cause visual lag,
+      -- while lower values may cause performance penalties. default 150.
+      refresh_interval = 250,
+      -- sign priorities for each type of mark - builtin marks, uppercase marks, lowercase
+      -- marks, and bookmarks.
+      -- can be either a table with all/none of the keys, or a single number, in which case
+      -- the priority applies to all marks.
+      -- default 10.
+      sign_priority = { lower = 10, upper = 15, builtin = 8, bookmark = 20 },
+      -- disables mark tracking for specific filetypes. default {}
+      excluded_filetypes = {},
+      -- marks.nvim allows you to configure up to 10 bookmark groups, each with its own
+      -- sign/virttext. Bookmarks can be used to group together positions and quickly move
+      -- across multiple buffers. default sign is '!@#$%^&*()' (from 0 to 9), and
+      -- default virt_text is "".
+      bookmark_0 = {
+        sign = "⚑",
+        virt_text = "hello world",
+        -- explicitly prompt for a virtual line annotation when setting a bookmark from this group.
+        -- defaults to false.
+        annotate = false,
+      },
+      mappings = {}
+    },
+  },
+
   -- Markdown previewer
   {
     "iamcco/markdown-preview.nvim",
@@ -379,9 +419,9 @@ require('lazy').setup({
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
     event = "VeryLazy",
     config = function()
-        require("nvim-surround").setup({
-            -- Configuration here, or leave empty to use defaults
-        })
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
     end
   }
 
@@ -417,32 +457,32 @@ local options = {
   fileencoding = "utf-8",                  -- the encoding written to a file
   foldexpr = "nvim_treesitter#foldexpr()",
   foldmethod = "expr",
-  guifont = "monospace:h17",               -- the font used in graphical neovim applications
-  hlsearch = true,                         -- highlight all matches on previous search pattern
-  ignorecase = true,                       -- ignore case in search patterns
-  mouse = "a",                             -- allow the mouse to be used in neovim
-  number = true,                           -- set numbered lines
-  numberwidth = 4,                         -- set number column width to 2 {default 4}
-  pumheight = 10,                          -- pop up menu height
-  relativenumber = true,                   -- set relative numbered lines
-  scrolloff = 8,                           -- is one of my fav
-  shiftwidth = 4,                          -- the number of spaces inserted for each indentation
-  showmode = false,                        -- we don't need to see things like -- INSERT -- anymore
-  showtabline = 2,                         -- always show tabs
+  guifont = "monospace:h17", -- the font used in graphical neovim applications
+  hlsearch = true,           -- highlight all matches on previous search pattern
+  ignorecase = true,         -- ignore case in search patterns
+  mouse = "a",               -- allow the mouse to be used in neovim
+  number = true,             -- set numbered lines
+  numberwidth = 4,           -- set number column width to 2 {default 4}
+  pumheight = 10,            -- pop up menu height
+  relativenumber = true,     -- set relative numbered lines
+  scrolloff = 8,             -- is one of my fav
+  shiftwidth = 4,            -- the number of spaces inserted for each indentation
+  showmode = false,          -- we don't need to see things like -- INSERT -- anymore
+  showtabline = 2,           -- always show tabs
   sidescrolloff = 8,
-  signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
-  smartcase = true,                        -- smart case
-  smartindent = true,                      -- make indenting smarter again
-  splitbelow = true,                       -- force all horizontal splits to go below current window
-  splitright = true,                       -- force all vertical splits to go to the right of current window
-  swapfile = false,                        -- creates a swapfile
-  tabstop = 4,                             -- insert 2 spaces for a tab
-  termguicolors = true,                    -- set term gui colors (most terminals support this)
-  timeoutlen = 500,                        -- time to wait for a mapped sequence to complete (in milliseconds)
-  undofile = true,                         -- enable persistent undo
-  updatetime = 300,                        -- faster completion (4000ms default)
-  wrap = true,                            -- display lines as one long line
-  writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
+  signcolumn = "yes",        -- always show the sign column, otherwise it would shift the text each time
+  smartcase = true,          -- smart case
+  smartindent = true,        -- make indenting smarter again
+  splitbelow = true,         -- force all horizontal splits to go below current window
+  splitright = true,         -- force all vertical splits to go to the right of current window
+  swapfile = false,          -- creates a swapfile
+  tabstop = 4,               -- insert 2 spaces for a tab
+  termguicolors = true,      -- set term gui colors (most terminals support this)
+  timeoutlen = 500,          -- time to wait for a mapped sequence to complete (in milliseconds)
+  undofile = true,           -- enable persistent undo
+  updatetime = 300,          -- faster completion (4000ms default)
+  wrap = true,               -- display lines as one long line
+  writebackup = false,       -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 }
 
 -- Iterate over options and set them
@@ -738,11 +778,11 @@ require('boole').setup({
   },
   -- User defined loops
   additions = {
-    {'Foo', 'Bar'},
-    {'tic', 'tac', 'toe'}
+    { 'Foo', 'Bar' },
+    { 'tic', 'tac', 'toe' }
   },
   allow_caps_additions = {
-    {'enable', 'disable'}
+    { 'enable', 'disable' }
     -- enable → disable
     -- Enable → Disable
     -- ENABLE → DISABLE
@@ -752,45 +792,45 @@ require('boole').setup({
 -- [[ Catppuccin settings ]]
 require("catppuccin").setup({
   flavour = "mocha", -- latte, frappe, macchiato, mocha
-  background = { -- :h background
-      light = "latte",
-      dark = "mocha",
+  background = {     -- :h background
+    light = "latte",
+    dark = "mocha",
   },
   transparent_background = false, -- disables setting the background color.
-  show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
-  term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
+  show_end_of_buffer = false,     -- shows the '~' characters after the end of buffers
+  term_colors = false,            -- sets terminal colors (e.g. `g:terminal_color_0`)
   dim_inactive = {
-      enabled = false, -- dims the background color of inactive window
-      shade = "dark",
-      percentage = 0.15, -- percentage of the shade to apply to the inactive window
+    enabled = false,              -- dims the background color of inactive window
+    shade = "dark",
+    percentage = 0.15,            -- percentage of the shade to apply to the inactive window
   },
-  no_italic = false, -- Force no italic
-  no_bold = false, -- Force no bold
-  no_underline = false, -- Force no underline
-  styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
-      comments = { "italic" }, -- Change the style of comments
-      conditionals = { "italic" },
-      loops = {},
-      functions = {},
-      keywords = {},
-      strings = {},
-      variables = {},
-      numbers = {},
-      booleans = {},
-      properties = {},
-      types = {},
-      operators = {},
+  no_italic = false,              -- Force no italic
+  no_bold = false,                -- Force no bold
+  no_underline = false,           -- Force no underline
+  styles = {                      -- Handles the styles of general hi groups (see `:h highlight-args`):
+    comments = { "italic" },      -- Change the style of comments
+    conditionals = { "italic" },
+    loops = {},
+    functions = {},
+    keywords = {},
+    strings = {},
+    variables = {},
+    numbers = {},
+    booleans = {},
+    properties = {},
+    types = {},
+    operators = {},
   },
   color_overrides = {},
   custom_highlights = {},
   integrations = {
-      cmp = true,
-      gitsigns = true,
-      nvimtree = true,
-      treesitter = true,
-      notify = false,
-      mini = false,
-      -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+    cmp = true,
+    gitsigns = true,
+    nvimtree = true,
+    treesitter = true,
+    notify = false,
+    mini = false,
+    -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
   },
 })
 
@@ -801,9 +841,10 @@ require("autoclose").setup({})
 
 -- ToggleTerm configuration
 function _G.set_terminal_keymaps()
-  local opts = {noremap = true}
+  local opts = { noremap = true }
   vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
 end
+
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 
 local Terminal = require("toggleterm.terminal").Terminal
@@ -811,58 +852,58 @@ local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
 local gitui = Terminal:new({ cmd = "gitui", hidden = true })
 
 function _LAZYGIT_TOGGLE()
-	lazygit:toggle()
+  lazygit:toggle()
 end
 
 function _GITUI_TOGGLE()
-	gitui:toggle()
+  gitui:toggle()
 end
 
 local node = Terminal:new({ cmd = "node", hidden = true })
 
 function _NODE_TOGGLE()
-	node:toggle()
+  node:toggle()
 end
 
 local ncdu = Terminal:new({ cmd = "ncdu", hidden = true })
 
 function _NCDU_TOGGLE()
-	ncdu:toggle()
+  ncdu:toggle()
 end
 
 local htop = Terminal:new({ cmd = "htop", hidden = true })
 
 function _HTOP_TOGGLE()
-	htop:toggle()
+  htop:toggle()
 end
 
 local python = Terminal:new({ cmd = "ipython --TerminalInteractiveShell.editing_mode=emacs", hidden = true })
 
 function _PYTHON_TOGGLE()
-	python:toggle()
+  python:toggle()
 end
 
 require("toggleterm").setup({
-	size = 20,
-	open_mapping = [[<c-\>]],
-	hide_numbers = false,
-	shade_filetypes = {},
-	shade_terminals = true,
-	shading_factor = 2,
-	start_in_insert = true,
-	insert_mappings = true,
-	persist_size = true,
-	direction = "float",
-	close_on_exit = true,
-	shell = vim.o.shell,
-	float_opts = {
-		border = "curved",
-		winblend = 0,
-		highlights = {
-			border = "Normal",
-			background = "Normal",
-		},
-	},
+  size = 20,
+  open_mapping = [[<c-\>]],
+  hide_numbers = false,
+  shade_filetypes = {},
+  shade_terminals = true,
+  shading_factor = 2,
+  start_in_insert = true,
+  insert_mappings = true,
+  persist_size = true,
+  direction = "float",
+  close_on_exit = true,
+  shell = vim.o.shell,
+  float_opts = {
+    border = "curved",
+    winblend = 0,
+    highlights = {
+      border = "Normal",
+      background = "Normal",
+    },
+  },
 })
 
 -- General keymaps
@@ -909,12 +950,12 @@ keymap("n", "<leader>c", ":NoNeckPain<cr>", opts)
 
 -- test
 local list_snips = function()
-	local ft_list = require("luasnip").available()[vim.o.filetype]
-	local ft_snips = {}
-	for _, item in pairs(ft_list) do
-		ft_snips[item.trigger] = item.name
-	end
-	print(vim.inspect(ft_snips))
+  local ft_list = require("luasnip").available()[vim.o.filetype]
+  local ft_snips = {}
+  for _, item in pairs(ft_list) do
+    ft_snips[item.trigger] = item.name
+  end
+  print(vim.inspect(ft_snips))
 end
 
 vim.api.nvim_create_user_command("SnipList", list_snips, {})
