@@ -423,7 +423,15 @@ require('lazy').setup({
         -- Configuration here, or leave empty to use defaults
       })
     end
-  }
+  },
+
+  {
+    "m4xshen/hardtime.nvim",
+    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+    opts = {
+      enabled = false,
+    }
+  },
 
   -- PAUSE
 
