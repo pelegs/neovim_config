@@ -433,6 +433,8 @@ require('lazy').setup({
     }
   },
 
+  { 'echasnovski/mini.nvim', version = '*' },
+
   -- PAUSE
 
 
@@ -913,6 +915,10 @@ require("toggleterm").setup({
     },
   },
 })
+
+-- mini.nvim modules
+
+require('mini.splitjoin').setup()
 
 -- General keymaps
 local keymap = vim.api.nvim_set_keymap
