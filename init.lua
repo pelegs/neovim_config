@@ -111,6 +111,38 @@ require('lazy').setup({
     },
   },
 
+  -- debugging c++
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = { "mfussenegger/nvim-dap" },
+    config = function()
+      local dap = require("dap")
+      local dapui = require("dapui")
+      dapui.setup()
+      dap.listeners.after.event_initialized["dapui_config"] = function()
+        dapui.open()
+      end
+      dap.listeners.after.event_terminated["dapui_config"] = function()
+        dapui.close()
+      end
+      dap.listeners.after.event_exited["dapui_config"] = function()
+        dapui.close()
+      end
+    end
+  },
+  {
+    'mfussenegger/nvim-dap',
+  },
+  {
+    'jay-babu/mason-nvim-dap.nvim',
+    event = "VeryLazy",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "mfussenegger/nvim-dap",
+    },
+    opts = { handlers = {} },
+  },
+
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim',  opts = {} },
   {
@@ -421,7 +453,18 @@ require('lazy').setup({
     }
   },
 
-  { 'echasnovski/mini.nvim', version = '*' },
+  {
+    'echasnovski/mini.nvim',
+    version = '*'
+  },
+
+  {
+    "max397574/colortils.nvim",
+    cmd = "Colortils",
+    config = function()
+      require("colortils").setup()
+    end,
+  }
 
   -- PAUSE
 
@@ -911,6 +954,11 @@ require('mini.splitjoin').setup()
 -- General keymaps
 local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
+
+-- c++ dap related
+keymap("n", "<leader>db", "<cmd> DapToggleBreakpoint <CR>", opts)
+keymap("n", "<leader>dr", "<cmd> DapContinue <CR>", opts)
+
 -- Better window navigation
 keymap("n", "<c-Left>", "<C-w>h", opts)
 keymap("n", "<c-Down>", "<C-w>j", opts)
