@@ -234,10 +234,7 @@ require('lazy').setup({
     -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
     main = "ibl",
-    -- opts = {
-    --   char = '┊',
-    --   show_trailing_blankline_indent = false,
-    -- },
+    opts = {},
   },
 
   -- "gc" to comment visual regions/lines
@@ -323,7 +320,7 @@ require('lazy').setup({
       },
       view = {
         width = 30,
-        hide_root_folder = false,
+        -- hide_root_folder = false,
         side = "left",
         number = true,
         relativenumber = true,
@@ -962,14 +959,14 @@ require('mini.splitjoin').setup()
 
 -- Blackjack setup
 require("blackjack").setup({
-  card_style = "mini", -- Can be "mini" or "large".
-  suit_style = "black", -- Can be "black" or "white".
-  scores_path = "/home/pelegs/blackjack_scores.json", -- Default location to store the scores.json file.
-  keybindings = {
-    ["next"] = "j",
-    ["finish"] = "k",
-    ["quit"] = "q",
-  },
+ card_style = "mini", -- Can be "mini" or "large".
+ suit_style = "black", -- Can be "black" or "white".
+ scores_path = "/home/pelegs/blackjack_scores.json", -- Default location to store the scores.json file.
+ keybindings = {
+   ["next"] = "j",
+   ["finish"] = "k",
+   ["quit"] = "q",
+ },
 })
 
 -- General keymaps
