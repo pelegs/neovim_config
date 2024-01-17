@@ -464,6 +464,11 @@ require('lazy').setup({
     config = function()
       require("colortils").setup()
     end,
+  },
+
+  {
+    "alanfortlink/blackjack.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
   }
 
   -- PAUSE
@@ -950,6 +955,18 @@ require("toggleterm").setup({
 -- mini.nvim modules
 
 require('mini.splitjoin').setup()
+
+-- Blackjack setup
+require("blackjack").setup({
+  card_style = "mini", -- Can be "mini" or "large".
+  suit_style = "black", -- Can be "black" or "white".
+  scores_path = "/home/pelegs/blackjack_scores.json", -- Default location to store the scores.json file.
+  keybindings = {
+    ["next"] = "j",
+    ["finish"] = "k",
+    ["quit"] = "q",
+  },
+})
 
 -- General keymaps
 local keymap = vim.api.nvim_set_keymap
