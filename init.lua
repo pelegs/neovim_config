@@ -114,7 +114,7 @@ require('lazy').setup({
   -- debugging c++
   {
     "rcarriga/nvim-dap-ui",
-    dependencies = { "mfussenegger/nvim-dap" },
+    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
     config = function()
       local dap = require("dap")
       local dapui = require("dapui")
@@ -323,7 +323,7 @@ require('lazy').setup({
       },
       view = {
         width = 30,
-        hide_root_folder = false,
+        -- hide_root_folder = false,
         side = "left",
         number = true,
         relativenumber = true,
@@ -406,10 +406,13 @@ require('lazy').setup({
   },
 
   -- Markdown previewer
+  -- See here for issues with dependencies:
+  -- https://github.com/iamcco/markdown-preview.nvim/issues/148
   {
     "iamcco/markdown-preview.nvim",
-    run = "cd app && npm install",
-    setup = function()
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && yarn install",
+    init = function()
       vim.g.mkdp_filetypes = { "markdown" }
     end,
     ft = { "markdown" },
