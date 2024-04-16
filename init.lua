@@ -234,10 +234,10 @@ require('lazy').setup({
     -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
     main = "ibl",
-    -- opts = {
-    --   char = '┊',
-    --   show_trailing_blankline_indent = false,
-    -- },
+    opts = {
+      scope = { show_start = true, show_end = true },
+      indent = { tab_char = "▎" }
+    }
   },
 
   -- "gc" to comment visual regions/lines
@@ -466,6 +466,11 @@ require('lazy').setup({
     config = function()
       require("colortils").setup()
     end,
+  },
+
+  {
+    "alanfortlink/blackjack.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
   }
 
   -- PAUSE
@@ -487,9 +492,7 @@ require('lazy').setup({
 }, {})
 
 -- Start indent-blankline
-require("ibl").setup({
-  indent = { char = "┊" },
-})
+require("ibl").setup()
 
 -- [[ Setting options ]]
 local options = {
@@ -957,6 +960,18 @@ require("toggleterm").setup({
 -- mini.nvim modules
 
 require('mini.splitjoin').setup()
+
+-- Blackjack setup
+require("blackjack").setup({
+  card_style = "mini",                               -- Can be "mini" or "large".
+  suit_style = "black",                              -- Can be "black" or "white".
+  scores_path = "/home/pelegs/blackjack_scores.json", -- Default location to store the scores.json file.
+  keybindings = {
+    ["next"] = "j",
+    ["finish"] = "k",
+    ["quit"] = "q",
+  },
+})
 
 -- General keymaps
 local keymap = vim.api.nvim_set_keymap
