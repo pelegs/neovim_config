@@ -901,6 +901,11 @@ vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 local Terminal = require("toggleterm.terminal").Terminal
 local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
 local gitui = Terminal:new({ cmd = "gitui", hidden = true })
+local gitgraph = Terminal:new({ cmd = "git-graph", hidden = true })
+
+function _GITGRAPH_TOGGLE()
+  gitgraph:toggle()
+end
 
 function _LAZYGIT_TOGGLE()
   lazygit:toggle()
@@ -963,8 +968,8 @@ require('mini.splitjoin').setup()
 
 -- Blackjack setup
 require("blackjack").setup({
-  card_style = "mini",                               -- Can be "mini" or "large".
-  suit_style = "black",                              -- Can be "black" or "white".
+  card_style = "mini",                                -- Can be "mini" or "large".
+  suit_style = "black",                               -- Can be "black" or "white".
   scores_path = "/home/pelegs/blackjack_scores.json", -- Default location to store the scores.json file.
   keybindings = {
     ["next"] = "j",
@@ -1014,6 +1019,7 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 keymap("n", "<leader>t", ":ToggleTerm<cr>", opts)
 keymap("n", "<leader>p", ":lua _PYTHON_TOGGLE()<cr>", opts)
 keymap("n", "<leader>g", ":lua _GITUI_TOGGLE()<cr>", opts)
+keymap("n", "<leader>F", ":lua _GITGRAPH_TOGGLE()<cr>", opts)
 keymap("n", "<leader>h", ":lua _HTOP_TOGGLE()<cr>", opts)
 keymap("n", "<leader>c", ":NoNeckPain<cr>", opts)
 
