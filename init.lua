@@ -96,6 +96,54 @@ require('lazy').setup({
   },
 
   {
+    'stevearc/conform.nvim',
+    event = { "BufReadPre", "BufNewFile" },
+    config = function()
+      local conform = require("conform")
+      conform.setup({
+        formatters_by_ft = {
+          python = { "isort", "black" },
+          json = { "prettier" },
+          lua = { "styleua" },
+        },
+        format_on_save = {
+          lsp_fallback = true,
+          async = false,
+          timeout = 500,
+        }
+      })
+      vim.keymap.set({ "n", "v" }, "<leader>mf", function()
+        conform.format({
+          lsp_fallback = true,
+          async = false,
+          timeout = 500,
+        })
+      end, { desc = "Format file or range" })
+    end,
+  },
+
+  {
+    'mfussenegger/nvim-lint',
+    event = { "BufReadPre", "BufNewFile" },
+    config = function()
+      local lint = require("lint")
+      lint.linters_by_ft = {
+        python = { "flake8" },
+      }
+      local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
+      vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
+        group = lint_augroup,
+        callback = function()
+          lint.try_lint()
+        end
+      })
+      vim.keymap.set({ "n" }, "<leader>ml", function()
+        lint.try_lint()
+      end, { desc = "Trigger linting for current file" })
+    end,
+  },
+
+  {
     -- Autocompletion
     'hrsh7th/nvim-cmp',
     dependencies = {
@@ -471,6 +519,13 @@ require('lazy').setup({
   {
     "alanfortlink/blackjack.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
+  },
+
+  {
+    "danymat/neogen",
+    config = true,
+    -- Uncomment next line if you want to follow only stable versions
+    -- version = "*"
   }
 
   -- PAUSE
