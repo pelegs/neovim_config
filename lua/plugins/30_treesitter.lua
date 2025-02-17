@@ -51,18 +51,18 @@ return {
           end,
         },
         textobjects = {
-          move = {
-            enable = true,
-            set_jumps = true,
-            goto_next_start = {
-              --- ... other keymaps
-              ["<Down>"] = { query = "@code_cell.inner", desc = "next code block" },
-            },
-            goto_previous_start = {
-              --- ... other keymaps
-              ["<Up>"] = { query = "@code_cell.inner", desc = "previous code block" },
-            },
-          },
+          -- move = {
+          --   enable = false,
+          --   set_jumps = true,
+          --   goto_next_start = {
+          --     --- ... other keymaps
+          --     ["<Down>"] = { query = "@code_cell.inner", desc = "next code block" },
+          --   },
+          --   goto_previous_start = {
+          --     --- ... other keymaps
+          --     ["<Up>"] = { query = "@code_cell.inner", desc = "previous code block" },
+          --   },
+          -- },
           select = {
             enable = true,
             lookahead = true, -- you can change this if you want

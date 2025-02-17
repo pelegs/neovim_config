@@ -99,28 +99,28 @@ return {
           filetypes = { "sls", "sls.yaml" },
         },
         rust_analyzer = {},
-        basedpyright = {
-          capabilities = {
-            workspace = {
-              didChangeWatchedFiles = {
-                dynamicRegistration = false,
-              },
-            },
-          },
-          settings = {
-            python = {
-              analysis = {
-                autoSearchPaths = true,
-                useLibraryCodeForTypes = true,
-                diagnosticMode = "workspace",
-              },
-            },
-          },
-          root_dir = function(fname)
-            return util.root_pattern(".git", "setup.py", "setup.cfg", "pyproject.toml", "requirements.txt")(fname)
-              or vim.fs.dirname(fname)
-          end,
-        },
+        -- basedpyright = {
+        --   capabilities = {
+        --     workspace = {
+        --       didChangeWatchedFiles = {
+        --         dynamicRegistration = false,
+        --       },
+        --     },
+        --   },
+        --   settings = {
+        --     python = {
+        --       analysis = {
+        --         autoSearchPaths = true,
+        --         useLibraryCodeForTypes = true,
+        --         diagnosticMode = "workspace",
+        --       },
+        --     },
+        --   },
+        --   root_dir = function(fname)
+        --     return util.root_pattern(".git", "setup.py", "setup.cfg", "pyproject.toml", "requirements.txt")(fname)
+        --       or vim.fs.dirname(fname)
+        --   end,
+        -- },
         lua_ls = {
           settings = {
             Lua = {

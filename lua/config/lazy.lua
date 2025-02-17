@@ -29,8 +29,8 @@ local opts = {
     },
   },
   change_detection = {
-    notify = false
-  }
+    notify = false,
+  },
 }
 
 require("lazy").setup("plugins", opts)

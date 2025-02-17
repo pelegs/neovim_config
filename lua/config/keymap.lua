@@ -59,9 +59,9 @@ keymap("n", "<C-b>", ":b#<CR>", { desc = "Jump between last two buffers" })
 
 -- NOTE: the following are from Tim's config
 -- set keybinds to leader v for vertical split and leader h for horizontal split
--- vim.keymap.set("n", "<leader>v", "<C-w>v")
--- vim.keymap.set("n", "<leader>h", "<C-w>s")
---
+vim.keymap.set("n", "<leader>v", "<C-w>v")
+vim.keymap.set("n", "<leader>h", "<C-w>s")
+
 -- -- set keybinds to jk to exit insert mode
 -- vim.keymap.set("i", "jk", "<Esc>")
 --
@@ -74,15 +74,9 @@ keymap("n", "<C-b>", ":b#<CR>", { desc = "Jump between last two buffers" })
 -- vim.keymap.set("n", "<leader>q", "<cmd>q<CR>")
 --
 -- -- source current lua file
--- vim.keymap.set({ "n", "i" }, "<C-q>", "<cmd>source %<CR>")
---
--- -- fold toggle current fold by using tab in normal mode
--- vim.keymap.set("n", "<Tab>", "za")
---
+vim.keymap.set({ "n", "i" }, "<C-q>", "<cmd>source %<CR>")
+
 -- -- execute lua
 -- vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
 -- vim.keymap.set("n", "<space>x", ":.lua<CR>")
 -- vim.keymap.set("v", "<space>x", ":lua<CR>")
---
--- -- jump between last two buffers
--- vim.keymap.set("n", "<C-b>", ":b#<CR>", { desc = "Jump between last two buffers" })
