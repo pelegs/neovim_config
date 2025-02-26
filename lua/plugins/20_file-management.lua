@@ -36,6 +36,14 @@ return {
           leave_dirs_open = true,
         },
       },
+      event_handlers = {
+        {
+          event = "neo_tree_buffer_enter",
+          handler = function(arg)
+            vim.opt.relativenumber = true
+          end,
+        },
+      },
       filesystem = {
         follow_current_file = {
           enabled = true,
