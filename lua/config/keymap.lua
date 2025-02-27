@@ -39,9 +39,6 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Toggles
-keymap("n", "<leader>t", ":ToggleTerm<cr>", opts)
-keymap("n", "<leader>p", ":lua _PYTHON_TOGGLE()<cr>", opts)
-keymap("n", "<leader>g", ":lua _LAZYGIT_TOGGLE()<cr>", opts)
 keymap("n", "<leader>F", ":lua _GITGRAPH_TOGGLE()<cr>", opts)
 keymap("n", "<leader>h", ":lua _HTOP_TOGGLE()<cr>", opts)
 keymap("n", "<leader>z", ":lua Snacks.zen()<cr>", opts)
