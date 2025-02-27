@@ -7,9 +7,29 @@ return {
   {
     "akinsho/toggleterm.nvim",
     version = "*",
+
     config = function()
       require("toggleterm").setup({
+        size = 20,
         open_mapping = [[<c-\>]],
+        hide_numbers = false,
+        shade_filetypes = {},
+        shade_terminals = true,
+        shading_factor = 2,
+        start_in_insert = true,
+        insert_mappings = true,
+        persist_size = true,
+        direction = "float",
+        close_on_exit = true,
+        shell = vim.o.shell,
+        float_opts = {
+          border = "curved",
+          winblend = 0,
+          highlights = {
+            border = "Normal",
+            background = "Normal",
+          },
+        },
       })
       function _G.set_terminal_keymaps()
         local opts = { buffer = 0 }
@@ -27,6 +47,7 @@ return {
 
       -- Create the user command :G to open a toggleterm floating window with lazygit opened in it
       local Terminal = require("toggleterm.terminal").Terminal
+      vim.api.nvim_set_keymap("n", "<leader>t", ":ToggleTerm<cr>", { noremap = true, silent = false })
 
       -- Gitgui setup
       local gitui = Terminal:new({ cmd = "gitui", hidden = false })
@@ -152,44 +173,3 @@ return {
     end,
   },
 }
-
--- local Terminal = require("toggleterm.terminal").Terminal
--- local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
--- local gitui = Terminal:new({ cmd = "gitui", hidden = true })
--- local gitgraph = Terminal:new({ cmd = "git-graph", hidden = true })
---
--- function _GITGRAPH_TOGGLE()
---   gitgraph:toggle()
--- end
---
--- function _LAZYGIT_TOGGLE()
---   lazygit:toggle()
--- end
---
--- function _GITUI_TOGGLE()
---   gitui:toggle()
--- end
---
--- local node = Terminal:new({ cmd = "node", hidden = true })
---
--- function _NODE_TOGGLE()
---   node:toggle()
--- end
---
--- local ncdu = Terminal:new({ cmd = "ncdu", hidden = true })
---
--- function _NCDU_TOGGLE()
---   ncdu:toggle()
--- end
---
--- local htop = Terminal:new({ cmd = "htop", hidden = true })
---
--- function _HTOP_TOGGLE()
---   htop:toggle()
--- end
---
--- local python = Terminal:new({ cmd = "ipython --TerminalInteractiveShell.editing_mode=emacs", hidden = true })
---
--- function _PYTHON_TOGGLE()
---   python:toggle()
--- end
