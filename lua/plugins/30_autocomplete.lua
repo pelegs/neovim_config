@@ -49,9 +49,9 @@ return {
       signature = { enabled = true },
       completion = {
         menu = {
-          auto_show = function(ctx)
-            return ctx.mode ~= "cmdline"
-          end,
+          -- auto_show = function(ctx)
+          --   return ctx.mode ~= "cmdline"
+          -- end,
           draw = {
             columns = {
               { "label", "label_description", gap = 1 },
