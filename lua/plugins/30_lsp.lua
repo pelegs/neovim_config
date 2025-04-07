@@ -85,6 +85,7 @@ return {
 
       vim.filetype.add({ extension = { templ = "templ" } })
       vim.filetype.add({ extension = { sls = "sls.yaml" } })
+      vim.filetype.add({ extension = { actiondef = "json" } })
 
       local lspconfig = require("lspconfig")
       lspconfig.gdscript.setup({})

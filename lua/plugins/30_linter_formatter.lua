@@ -86,11 +86,9 @@ return {
             r = "r",
             typescript = "ts",
           },
-
           lang_to_formatters = {},
         },
       }
-
       vim.keymap.set("n", "<space>f", function()
         require("conform").format({ timeout_ms = 2000, async = true, lsp_format = "fallback" })
       end, { desc = "Format buffer with conform" })
