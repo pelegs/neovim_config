@@ -66,6 +66,15 @@ return {
     opts_extend = { "sources.default" },
   },
   {
+    "L3MON4D3/LuaSnip",
+    dependencies = { "rafamadriz/friendly-snippets" },
+    config = function()
+      require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/LuaSnip/" })
+      require("luasnip").config.setup({ update_events = "TextChanged,TextChangedI" })
+      require("luasnip").config.setup({ enable_autosnippets = true })
+    end,
+  },
+  {
     "windwp/nvim-autopairs",
     config = function()
       require("nvim-autopairs").setup({})
