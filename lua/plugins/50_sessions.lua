@@ -27,10 +27,10 @@ return {
         --auto_session_enable_last_session = vim.loop.cwd() == vim.loop.os_homedir(),
       })
 
-      vim.keymap.set("n", "<C-s>", require("auto-session.session-lens").search_session, {
-        noremap = true,
-        desc = "Search sessions",
-      })
+      -- vim.keymap.set("n", "<C-s>", require("auto-session.session-lens").search_session, {
+      --   noremap = true,
+      --   desc = "Search sessions",
+      -- })
     end,
   },
 }

@@ -63,3 +63,17 @@ vim.api.nvim_create_autocmd("ModeChanged", {
     end
   end,
 })
+
+-- show diagnostics only on highlighted row
+-- vim.diagnostics.config({ virtual_text = false })
+
+-- -- Load LSP configuration first
+-- require("Arduino-Nvim.lsp").setup()
+--
+-- -- Set up Arduino file type detection
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "arduino",
+--   callback = function()
+--     require("Arduino-Nvim")
+--   end,
+-- })
